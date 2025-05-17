@@ -12,6 +12,8 @@ module org.example.practicaenequipocristianvictoraitornico {
     // Kotlin Serialization
     requires kotlinx.serialization.core;
     requires kotlinx.serialization.json;
+    //XML
+    requires net.devrieze.xmlutil.serialization;
 
 
     // Result

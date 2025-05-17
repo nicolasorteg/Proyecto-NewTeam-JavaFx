@@ -13,4 +13,5 @@ abstract class UsersException (val messager: String) {
     class IsBlankException(userName: String): UsersException("El usuario no puede estar en blanco")
 
     class DatabaseException(messager: String): UsersException(messager)
+    class ContraseniaEquivocadaException(messager: String): UsersException(messager)
 }
