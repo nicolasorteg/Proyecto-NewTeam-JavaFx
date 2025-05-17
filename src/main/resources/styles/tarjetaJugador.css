@@ -1,0 +1,25 @@
+/* Fondo del Cromo */
+.anchor-pane {
+    -fx-background-color: #7CFC00;
+    -fx-background-radius: 15px;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 5px;
+}
+
+/* Estilo del texto (Nombre, Posición, Estadísticas) */
+.label {
+    -fx-text-fill: #FFD700;
+}
+
+/* Estilo del texto del área de descripción */
+.text-area {
+    -fx-text-fill: #000000;
+    -fx-font-size: 13px;
+}
+
+/* Estilo del botón Volver */
+.button {
+    -fx-background-color: #FFD700;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+}
