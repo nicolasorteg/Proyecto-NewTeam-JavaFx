@@ -4,7 +4,7 @@ package org.example.practicaenequipocristianvictoraitornico.users.mapper
 import org.example.practicaenequipocristianvictoraitornico.users.dao.UsersEntity
 import org.example.practicaenequipocristianvictoraitornico.users.models.User
 
-class UsersMappper {
+class UsersMapper {
     fun toEntity(user: User): UsersEntity {
         return UsersEntity(
             name = user.name,
