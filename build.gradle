@@ -85,6 +85,10 @@ dependencies {
     implementation("org.mindrot:jbcrypt:0.4")
     // Open Brwoser
     implementation("com.vaadin:open:8.5.0")
+    //koin
+
+    implementation(platform("io.insert-koin:koin-bom:3.5.6"))
+    implementation("io.insert-koin:koin-core")
 }
 
 test {

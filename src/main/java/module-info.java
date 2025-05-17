@@ -35,10 +35,23 @@ module org.example.practicaenequipocristianvictoraitornico {
     // Cache
     requires com.github.benmanes.caffeine;
     requires jbcrypt;
+    requires koin.core.jvm;
 
 
     opens org.example.practicaenequipocristianvictoraitornico to javafx.fxml;
     exports org.example.practicaenequipocristianvictoraitornico;
+
+    opens org.example.practicaenequipocristianvictoraitornico.players.models to javafx.fxml;
+    exports org.example.practicaenequipocristianvictoraitornico.players.models;
+
+    opens org.example.practicaenequipocristianvictoraitornico.players.dao to javafx.fxml;
+    exports org.example.practicaenequipocristianvictoraitornico.players.dao;
+
+    opens org.example.practicaenequipocristianvictoraitornico.users.dao to javafx.fxml;
+    exports org.example.practicaenequipocristianvictoraitornico.users.dao;
+
+    opens org.example.practicaenequipocristianvictoraitornico.users.models to javafx.fxml;
+    exports org.example.practicaenequipocristianvictoraitornico.users.models;
 
     opens org.example.practicaenequipocristianvictoraitornico.view.routes to javafx.fxml;
     exports org.example.practicaenequipocristianvictoraitornico.view.routes;
