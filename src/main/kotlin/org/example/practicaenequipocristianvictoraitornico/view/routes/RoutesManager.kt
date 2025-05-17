@@ -47,10 +47,10 @@ object RoutesManager {
     /**
      * Inicializa la aplicación mostrando la pantalla splash.
      */
-    fun initApp(stage: Stage, application: Application) {
+    fun initApp(stage: Stage) {
         logger.debug { "Iniciando aplicación con pantalla Splash" }
 
-        app = application
+
         mainStage = stage
         _activeStage = stage
 

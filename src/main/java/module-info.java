@@ -18,8 +18,7 @@ module org.example.practicaenequipocristianvictoraitornico {
     requires kotlin.result.jvm;
 
     // SQL
-    requires java.sql; // Como no pongas esto te vas a volver loco con los errores!!
-
+    requires java.sql;
 
     // Open Vadin
     requires open;
@@ -34,10 +33,12 @@ module org.example.practicaenequipocristianvictoraitornico {
 
     // Cache
     requires com.github.benmanes.caffeine;
+    //bcrypt
     requires jbcrypt;
+    //koin
     requires koin.core.jvm;
 
-
+    //exponer el proyecto
     opens org.example.practicaenequipocristianvictoraitornico to javafx.fxml;
     exports org.example.practicaenequipocristianvictoraitornico;
 
@@ -47,11 +48,6 @@ module org.example.practicaenequipocristianvictoraitornico {
     opens org.example.practicaenequipocristianvictoraitornico.players.dao to javafx.fxml;
     exports org.example.practicaenequipocristianvictoraitornico.players.dao;
 
-    opens org.example.practicaenequipocristianvictoraitornico.users.dao to javafx.fxml;
-    exports org.example.practicaenequipocristianvictoraitornico.users.dao;
-
-    opens org.example.practicaenequipocristianvictoraitornico.users.models to javafx.fxml;
-    exports org.example.practicaenequipocristianvictoraitornico.users.models;
 
     opens org.example.practicaenequipocristianvictoraitornico.view.routes to javafx.fxml;
     exports org.example.practicaenequipocristianvictoraitornico.view.routes;
