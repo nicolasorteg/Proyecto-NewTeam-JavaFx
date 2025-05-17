@@ -11,13 +11,15 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.23'
 }
 
-group ''
-version ''
+group 'org.example'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
+modularity {
 
+}
 ext {
     junitVersion = '5.10.2'
 }
@@ -40,18 +42,7 @@ javafx {
     version = '21'
     modules = ['javafx.controls', 'javafx.fxml']
 }
-configurations.all {
-    resolutionStrategy {
-        force 'org.jetbrains.kotlin:kotlin-stdlib:1.9.23'
-        force 'org.jetbrains.kotlin:kotlin-stdlib-common:1.9.23'
-        force 'org.jetbrains.kotlin:kotlin-reflect:1.9.23'
-    }
-    resolutionStrategy.eachDependency { details ->
-        if (details.requested.group == 'org.jetbrains.kotlinx' && details.requested.name.startsWith('kotlinx-serialization')) {
-            details.useVersion '1.8.0'  // O la versión que uses compatible con Kotlin 1.9.23
-        }
-    }
-}
+
 
 dependencies {
     //libreria de drivers de base de datos H2
@@ -76,7 +67,7 @@ dependencies {
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
     // test normales
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     //caffeine cache
     implementation("com.github.ben-manes.caffeine:caffeine:3.2.0")
     //Result exeptions
@@ -84,15 +75,21 @@ dependencies {
     //BCrypt
     implementation("org.mindrot:jbcrypt:0.4")
     // Open Brwoser
-    implementation("com.vaadin:open:8.5.0")
+    implementation("com.vaadin:open:8.5.0.4")
     //koin
 
     implementation(platform("io.insert-koin:koin-bom:3.5.6"))
     implementation("io.insert-koin:koin-core")
+    testImplementation "org.jetbrains.kotlin:kotlin-test:2.1.0"
 }
 
 test {
     useJUnitPlatform()
+    jvmArgs(
+            "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+            "--add-opens", "java.base/java.util=ALL-UNNAMED",
+            "--add-reads", "org.junit.jupiter.api=kotlin.stdlib"
+    )
 }
 
 jlink {
