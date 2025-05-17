@@ -2,7 +2,9 @@ package org.example.practicaenequipocristianvictoraitornico.players.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-//import nl.adaptivity.xmlutil.serialization.XmlElement
+import nl.adaptivity.xmlutil.serialization.XmlElement
+
+
 
 
 /**
@@ -11,52 +13,52 @@ import kotlinx.serialization.Serializable
 @Serializable
 @SerialName("personal")
 data class PersonalDtoXml(
-    //@XmlElement
+    @XmlElement
     @SerialName("personal")
     val id: Int=0,
-    //@XmlElement
+    @XmlElement
     @SerialName("tipo")
     val tipo: String,
-    //@XmlElement
+    @XmlElement
     @SerialName("nombre")
     val nombre: String,
-   // @XmlElement
+    @XmlElement
     @SerialName("apellidos")
     val apellidos: String,
-    //@XmlElement
+    @XmlElement
     @SerialName("fechaNacimiento")
     val fechaNacimiento: String,
-    //@XmlElement
+    @XmlElement
     @SerialName("fechaIncorporacion")
     val fechaIncorporacion: String,
-    //@XmlElement
+    @XmlElement
     @SerialName("salario")
     val salario: Double,
-    //@XmlElement
+    @XmlElement
     @SerialName("pais")
     val pais: String,
-    //@XmlElement
+    @XmlElement
     @SerialName("especialidad")
     val especialidad: String?,
-    //@XmlElement
+    @XmlElement
     @SerialName("posicion")
     val posicion: String?,
-    //@XmlElement
+    @XmlElement
     @SerialName("dorsal")
     val dorsal: String?,
-    //@XmlElement
+    @XmlElement
     @SerialName("altura")
     val altura: String?,
-    //@XmlElement
+    @XmlElement
     @SerialName("peso")
     val peso: String?,
-    //@XmlElement
+    @XmlElement
     @SerialName("goles")
     val goles: String?,
-    //@XmlElement
+    @XmlElement
     @SerialName("partidosJugados")
     val partidosJugados: String?,
-    //@XmlElement
+    @XmlElement
     @SerialName("imagen")
     val imagen: String?,
 )

@@ -1,7 +1,12 @@
 package org.example.practicaenequipocristianvictoraitornico.players.storage
 
 
-
+import com.github.michaelbull.result.Result
+import com.github.michaelbull.result.Err
+import com.github.michaelbull.result.Ok
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
+import nl.adaptivity.xmlutil.serialization.XML
 import org.example.practicaenequipocristianvictoraitornico.players.dto.EntrenadorDto
 import org.example.practicaenequipocristianvictoraitornico.players.dto.EquipoDtoXml
 import org.example.practicaenequipocristianvictoraitornico.players.dto.JugadorDto
@@ -19,7 +24,7 @@ import java.io.File
 /**
  * Esta es la implementación de la interfaz PersonalStorage.kt para leer y escribir datos de un listado de personas en formato XML.
  */
-/*class PersonalStorageXml: PersonalStorage {
+class PersonalStorageXml: PersonalStorage {
 
     private val logger = logging()
     private val personaMapper = PersonaMapper()
@@ -42,7 +47,7 @@ import java.io.File
 
         // leemos el archivo XML
         val xmlString = file.readText()
-        val xml = Tipo.XML {}
+        val xml = XML {}
 
         // se paresa el XML a la clase correspondiente
         val equipoDto = xml.decodeFromString<EquipoDtoXml>(xmlString)
@@ -150,4 +155,4 @@ import java.io.File
         file.writeText(xml.encodeToString(equipoDto))
         return Ok("archivo guardado correctamente")
     }
-}*/
+}
