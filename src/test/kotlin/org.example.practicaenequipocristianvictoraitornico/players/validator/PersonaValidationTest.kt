@@ -2,12 +2,12 @@ package org.example.practicaenequipocristianvictoraitornico.players.validator
 
 import org.example.practicaenequipocristianvictoraitornico.players.models.Jugadores
 import org.example.practicaenequipocristianvictoraitornico.players.models.Posicion
-import org.example.practicaenequipocristianvictoraitornico.players.validator.PersonaValidation
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import java.time.LocalDate
 import org.lighthousegames.logging.logging
+import java.time.LocalDate
 
 
 class PersonaValidationTest {
