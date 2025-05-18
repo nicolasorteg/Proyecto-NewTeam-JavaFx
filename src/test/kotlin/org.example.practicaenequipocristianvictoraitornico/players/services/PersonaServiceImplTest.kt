@@ -75,7 +75,7 @@ import java.time.LocalDate
  assertEquals(persona, result.value.first(),"deben ser iguales")
  assertTrue(result.value.size == 1)
  assertTrue(result.isOk)
- verify(service, times(1)).save(persona)
+ verify(repository, times(1)).save(persona)
  verify(validator, times(1)).validator(persona)
  verify(storage, times(1)).leerDelArchivo(file)
 
@@ -84,16 +84,15 @@ import java.time.LocalDate
  @Test
  @DisplayName("importacion fallida de jugador")
  fun importarDatosDesdeFicheroDatoNombreIncorrecto() {
-  whenever(repository.save(persona)) doReturn persona
+  //whenever(repository.save(persona)) doReturn persona
   whenever(validator.validator(persona)) doReturn Err(PersonasException.PersonasInvalidoException("nombre invalida"))
   whenever(storage.leerDelArchivo(file)) doReturn Ok(lista)
 
 
   val result= service.importarDatosDesdeFichero(Path.of("xd.zip"))
-  assertEquals(persona, result.value.first(),"deben ser iguales")
-  assertTrue(result.value.size == 1)
-  assertTrue(result.isOk)
-  verify(service, times(1)).save(persona)
+  assertTrue(result.error is PersonasException.PersonasInvalidoException, "debe tener ese error")
+  assertTrue(result.isErr,"debe ser un error")
+  assertEquals(result.error.messager,"Persona no válida: nombre invalida","deben ser iguales")
   verify(validator, times(1)).validator(persona)
   verify(storage, times(1)).leerDelArchivo(file)
 
@@ -109,7 +108,7 @@ import java.time.LocalDate
   assertTrue(result.isOk,"debe devolver Ok")
   assertEquals(result.value,"guardado con exito","devuelve el mensaje")
  verify(repository, times(1)).getAll()
- verify(storage, times(1)).leerDelArchivo(file)
+ verify(storage, times(1)).escribirAUnArchivo(file,lista, Tipo.JSON)
  }
 
 @Test

@@ -1,4 +1,4 @@
-package practicaenequipocristianvictoraitornico.users.service
+package org.example.practicaenequipocristianvictoraitornico.users.service
 
 import org.junit.jupiter.api.Test
 

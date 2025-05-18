@@ -1,4 +1,4 @@
-package practicaenequipocristianvictoraitornico.players.storage
+package org.example.practicaenequipocristianvictoraitornico.players.storage
 
 import org.junit.jupiter.api.Test
 
