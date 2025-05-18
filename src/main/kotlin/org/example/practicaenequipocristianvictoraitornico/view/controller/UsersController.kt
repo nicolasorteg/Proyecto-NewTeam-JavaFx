@@ -3,13 +3,18 @@ package org.example.practicaenequipocristianvictoraitornico.view.controller
 import javafx.fxml.FXML
 import javafx.scene.control.*
 import javafx.stage.Stage
+
+import org.example.practicaenequipocristianvictoraitornico.users.service.UsersServiceImpl
 import org.lighthousegames.logging.logging
 import org.mindrot.jbcrypt.BCrypt
 import org.example.practicaenequipocristianvictoraitornico.view.routes.RoutesManager
 
-class UsersController {
+class UsersController(
+    private val users: UsersServiceImpl
+) {
 
     private val logger = logging()
+
 
     @FXML
     private lateinit var userName: TextField
@@ -23,14 +28,10 @@ class UsersController {
     @FXML
     private lateinit var loginMessage: Label
 
-    // Simulación de base de datos con BCrypt
-    private val usersDB = mapOf(
-        "admin" to BCrypt.hashpw("contraseñasegura", BCrypt.gensalt())
-    )
-
     @FXML
     fun initialize() {
         loginButton.setOnAction {
+            logger.debug { "Iniciar loggin" }
             login()
         }
     }
@@ -44,10 +45,10 @@ class UsersController {
             loginMessage.style = "-fx-text-fill: red;"
             return
         }
+        val crypt= BCrypt.hashpw(inputPass,BCrypt.gensalt(12))
 
-        val hashedPassword = usersDB[inputUser]
 
-        if (hashedPassword != null && BCrypt.checkpw(inputPass, hashedPassword)) {
+        if (inputPass != null && users.goodLogin(inputUser,crypt).isOk) {
             loginMessage.text = "Inicio de sesión exitoso"
             loginMessage.style = "-fx-text-fill: green;"
             logger.info { "Usuario $inputUser ha iniciado sesión correctamente" }

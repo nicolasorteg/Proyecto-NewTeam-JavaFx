@@ -18,7 +18,9 @@ class MainApp : Application(), KoinComponent {
         }
     }
     override fun start(primaryStage: Stage) {
-        RoutesManager.initApp( primaryStage, this)
+        RoutesManager.apply {
+            app= this@MainApp
+        }.run { initApp(primaryStage) }
     }
 }
 

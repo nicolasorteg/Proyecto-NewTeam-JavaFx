@@ -155,7 +155,7 @@ class PersonalStorageCsv: PersonalStorage {
         }
 
         logger.info { "Datos guardados correctamente 😎" }
-        return Ok("guardado con exito")
+        return Ok(file.absolutePath)
     }
 
 }

@@ -33,11 +33,11 @@ object RoutesManager {
     lateinit var app: Application
 
     enum class View(val fxml: String) {
-        MAIN("views/principal-view.fxml"),
-        ACERCA_DE("views/acercaDe-view.fxml"),
-        SPLASH_SCREEN("views/splashScreen.fxml"),
-        TARJETAS_JUGADORES("views/tarjetasJugadores-view.fxml"),
-        USER("views/user-view.fxml"),
+        MAIN("/org/example/practicaenequipocristianvictoraitornico/view/players/principal-view.fxml"),
+        ACERCA_DE("/org/example/practicaenequipocristianvictoraitornico/view/acerca-de/acercaDe-view.fxml"),
+        SPLASH_SCREEN("/org/example/practicaenequipocristianvictoraitornico/view/splash-screen/splash-screen-view.fxml"),
+        TARJETAS_JUGADORES("/org/example/practicaenequipocristianvictoraitornico/view/players/tarjetasJugadores-view.fxml"),
+        USER("/org/example/practicaenequipocristianvictoraitornico/view/user/user-view.fxml"),
     }
 
     init {
@@ -47,10 +47,10 @@ object RoutesManager {
     /**
      * Inicializa la aplicación mostrando la pantalla splash.
      */
-    fun initApp(stage: Stage, application: Application) {
+    fun initApp(stage: Stage) {
         logger.debug { "Iniciando aplicación con pantalla Splash" }
 
-        app = application
+
         mainStage = stage
         _activeStage = stage
 
@@ -64,7 +64,6 @@ object RoutesManager {
         stage.apply {
             title = "Cargando aplicación..."
             scene.root = root
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             isResizable = false
             this.scene = scene
             centerOnScreen()
@@ -72,18 +71,14 @@ object RoutesManager {
         }
 
         // Esperamos 3 segundos, luego mostramos el login
-        val pause = PauseTransition(Duration.seconds(3.0))
-        pause.setOnFinished {
-            controller.setStatus("¡Listo!")
-            showLogin()
-        }
+        val pause = PauseTransition(Duration.seconds(5.0))
         pause.play()
     }
 
     /**
      * Muestra la ventana de inicio de sesión.
      */
-    fun showLogin() {
+    fun showLogin(owner: Stage) {
         logger.debug { "Mostrando pantalla de login" }
 
         val loader = FXMLLoader(getResource(View.USER.fxml))
@@ -93,10 +88,9 @@ object RoutesManager {
 
         val loginStage = Stage().apply {
             title = "Iniciar sesión"
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             this.scene = scene
             isResizable = false
-            initOwner(mainStage)
+            initOwner(owner)
             initModality(Modality.APPLICATION_MODAL)
             centerOnScreen()
         }
@@ -113,7 +107,6 @@ object RoutesManager {
         logger.debug { "Mostrando vista principal" }
 
         val loader = FXMLLoader(getResource(View.MAIN.fxml))
-        loader.setController(PrincipalController())
         val root = loader.load<Pane>()
         val controller = loader.getController<PrincipalController>()
         val scene = Scene(root)
@@ -122,7 +115,6 @@ object RoutesManager {
             title = "Gestor del New Team"
             this.scene = scene
             isResizable = false
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             setOnCloseRequest { onAppExit(it.toString()) }
             centerOnScreen()
             show()
@@ -146,7 +138,6 @@ object RoutesManager {
         Stage().apply {
             title = "Acerca del programa"
             this.scene = scene
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             isResizable = false
             initOwner(mainStage)
             initModality(Modality.WINDOW_MODAL)
@@ -168,7 +159,6 @@ object RoutesManager {
         Stage().apply {
             title = "Datos de Jugadores"
             this.scene = scene
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             isResizable = false
             initOwner(mainStage)
             initModality(Modality.WINDOW_MODAL)

@@ -127,6 +127,6 @@ class PersonalStorageBin : PersonalStorage {
                 }
             }
         }
-        return Ok("guardado con exito")
+        return Ok(file.absolutePath)
     }
 }

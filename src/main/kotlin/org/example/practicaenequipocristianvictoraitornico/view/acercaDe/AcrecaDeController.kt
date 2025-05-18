@@ -15,7 +15,7 @@ class AcrecaDeController {
     fun initialize() {
         logger.debug { "Inicializando AcercaDeController" }
         gitHubRepository.setOnAction {
-            val url = "https://github.com/Cristianortegaa/Practica-en-equipo-Cristian-Victor-Aitor-Nico/tree/main"
+            val url = "https://github.com/Cristianortegaa/Proyecto-NewTeam-JavaFx/tree/main"
             logger.debug { "Abriendo enlace a github" }
             Open.open(url)
         }
