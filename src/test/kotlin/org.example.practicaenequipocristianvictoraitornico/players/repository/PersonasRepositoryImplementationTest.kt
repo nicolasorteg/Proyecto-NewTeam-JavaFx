@@ -109,9 +109,9 @@ import org.junit.jupiter.api.DisplayName
    whenever(mapper.toDatabaseModel(persona3)) doReturn persona2
 
  val result=repository.getById(persona2.id)
- assertEquals(result,persona3,"deberia devolver la persona3")
+ assertEquals(result,persona2,"deberia devolver la persona3")
  assertNotNull(result,"no deberia ser nulo")
- assertEquals(result!!.id,persona3.id,"deberia devolver la persona3")
+ assertEquals(result!!.id,persona2.id,"deberia devolver la persona3")
 
  verify(dao,times(1)).getById(2)
  verify(mapper, times(1)).toDatabaseModel(persona3)
@@ -137,7 +137,8 @@ import org.junit.jupiter.api.DisplayName
 
  val result=repository.update(persona2,persona2.id)
 
-  assertEquals(result,persona2,"deberia devolver la persona2")
+  assertEquals(result!!.nombre,persona2.nombre,"deberia devolver la persona2")
+ assertEquals(result!!.apellidos,persona2.apellidos,"deberia devolver la persona2")
   assertNotNull(result,"no deberia ser nulo")
   assertEquals(result!!.id,persona2.id,"deberia devolver la persona2")
 
@@ -180,7 +181,7 @@ import org.junit.jupiter.api.DisplayName
  @DisplayName("delete no estando")
  fun deleteNotPersona() {
   whenever(dao.getById(persona3.id)) doReturn null
-  whenever(mapper.toDatabaseModel(persona3)) doReturn persona2
+
 
 
   val result=repository.delete(persona2.id)
@@ -188,15 +189,15 @@ import org.junit.jupiter.api.DisplayName
   assertNull(result,"deberia ser nulo")
 
 
-  verify(dao,times(1)).deleteById(persona3.id)
-  verify(mapper, times(0)).toDatabaseModel(persona3)
-  verify(dao, times(0)).deleteById(persona3.id)
+  verify(dao,times(1)).getById(persona3.id)
+  verify(mapper, times(0)).toDatabaseModel(any())
+  verify(dao, times(0)).deleteById(any())
  }
  @Test
  @DisplayName("delete no estando y fallando")
  fun notDeletePersona() {
   whenever(dao.getById(persona3.id)) doReturn persona3
-  whenever(mapper.toDatabaseModel(persona3)) doReturn persona2
+  //whenever(mapper.toDatabaseModel(persona3)) doReturn persona2
   whenever(dao.deleteById(persona3.id)) doReturn 0
 
 
@@ -213,12 +214,14 @@ import org.junit.jupiter.api.DisplayName
 @Test
  fun save() {
   whenever(mapper.toEntity(persona2)).thenReturn(persona3)
-  whenever(mapper.toDatabaseModel(persona3)).thenReturn(persona2)
   whenever(dao.save(persona3)) doReturn 1
 
  val result=repository.save(persona2)
  assertEquals(result.id,1,"deberia devolver la persona2")
  assertNotNull(result)
  assertEquals(result.nombre,persona2.nombre,"deberia devolver la persona2")
+
+ verify(mapper, times(1)).toEntity(persona2)
+ verify(dao, times(1)).save(persona3)
  }
 }
