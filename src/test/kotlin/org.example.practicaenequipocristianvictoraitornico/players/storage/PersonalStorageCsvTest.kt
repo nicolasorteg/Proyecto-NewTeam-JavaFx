@@ -10,19 +10,15 @@ import org.example.practicaenequipocristianvictoraitornico.players.utils.toPosic
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import org.mockito.Mockito.*
-import org.mockito.kotlin.mock
-import org.mockito.kotlin.whenever
 import java.io.File
 import java.time.LocalDate
 
 class PersonalStorageCsvTest {
 
  private val personalStorageCsv = PersonalStorageCsv()
- private val mockFile = mock(File::class.java)
 
  private val jugadorCsvLine = "1,Cristiano,Ronaldo,1985-02-05,2023-08-15,100000.0,Portugal,Jugador,,DELANTERO,7,1.87,84.0,700,900,url"
- private val entrenadorCsvLine = "2,Zinedine,Zidane,1972-06-23,2022-05-10,80000.0,Francia,Entrenador,ATAQUE,,,,,,,"
+ private val entrenadorCsvLine = "2,Zinedine,Zidane,1972-06-23,2022-05-10,80000.0,Francia,Entrenador,ENTRENADOR_PRINCIPAL,,,,,,,"
 
  private val jugador = Jugadores(
   id = 1L,
@@ -72,43 +68,37 @@ class PersonalStorageCsvTest {
  @Test
  @DisplayName("leerDelArchivo debería retornar Err con PersonasStorageException si el archivo no existe")
  fun leerDelArchivo_retornaErrConPersonasStorageException_archivoNoExiste() {
-  whenever(mockFile.isFile).thenReturn(false)
-  whenever(mockFile.exists()).thenReturn(false)
-  whenever(mockFile.canRead()).thenReturn(false)
-
-  val result = personalStorageCsv.leerDelArchivo(mockFile)
+  val nonExistentFile = File("nonExistent.csv")
+  val result = personalStorageCsv.leerDelArchivo(nonExistentFile)
 
   assertTrue(result.isErr)
   assertTrue(result.error is PersonasException.PersonasStorageException)
-  assertEquals("El fichero no existe o no se puede leer: Mock for File, hashCode: ${mockFile.hashCode()}", result.error.message)
+  assertEquals("El fichero no existe o no se puede leer: ${nonExistentFile.path}", result.error.message)
  }
 
  @Test
  @DisplayName("leerDelArchivo debería retornar Err con PersonasStorageException si el archivo no es un fichero")
  fun leerDelArchivo_retornaErrConPersonasStorageException_archivoNoEsFichero() {
-  whenever(mockFile.isFile).thenReturn(false)
-  whenever(mockFile.exists()).thenReturn(true)
-  whenever(mockFile.canRead()).thenReturn(true)
-
-  val result = personalStorageCsv.leerDelArchivo(mockFile)
+  val tempDir = createTempDir("testLeerDelArchivoDir")
+  val result = personalStorageCsv.leerDelArchivo(tempDir)
 
   assertTrue(result.isErr)
   assertTrue(result.error is PersonasException.PersonasStorageException)
-  assertEquals("El fichero no existe o no se puede leer: Mock for File, hashCode: ${mockFile.hashCode()}", result.error.message)
+  assertEquals("El fichero no existe o no se puede leer: ${tempDir.path}", result.error.message)
+  tempDir.deleteRecursively()
  }
 
  @Test
  @DisplayName("leerDelArchivo debería retornar Err con PersonasStorageException si el archivo no se puede leer")
  fun leerDelArchivo_retornaErrConPersonasStorageException_archivoNoSePuedeLeer() {
-  whenever(mockFile.isFile).thenReturn(true)
-  whenever(mockFile.exists()).thenReturn(true)
-  whenever(mockFile.canRead()).thenReturn(false)
-
-  val result = personalStorageCsv.leerDelArchivo(mockFile)
+  val tempFile = createTempFile("testLeerDelArchivoNoLeer", ".csv")
+  tempFile.setReadable(false)
+  val result = personalStorageCsv.leerDelArchivo(tempFile)
 
   assertTrue(result.isErr)
   assertTrue(result.error is PersonasException.PersonasStorageException)
-  assertEquals("El fichero no existe o no se puede leer: Mock for File, hashCode: ${mockFile.hashCode()}", result.error.message)
+  assertEquals("El fichero no existe o no se puede leer: ${tempFile.path}", result.error.message)
+  tempFile.delete()
  }
 
  @Test
@@ -142,18 +132,17 @@ class PersonalStorageCsvTest {
 
   val fileContent = tempFile.readText()
   assertTrue(fileContent.contains(jugadorCsvLine))
-  assertTrue(fileContent.contains(entrenadorCsvLine.replace(",,,,,,,", ",DELANTERO,7,1.87,84.0,700,900,url"))) // Adjust entrenador line for extra commas
+  assertTrue(fileContent.contains(entrenadorCsvLine.replace(",,,,,,,", ",ENTRENADOR_PRINCIPAL,,,,,,,,")))
   tempFile.delete()
  }
 
  @Test
  @DisplayName("escribirAUnArchivo debería retornar Err con PersonasStorageException si el directorio padre no existe")
  fun escribirAUnArchivo_retornaErrConPersonasStorageException_directorioPadreNoExiste() {
-  whenever(mockFile.parentFile).thenReturn(File("nonExistentDir"))
-  whenever(mockFile.parentFile?.exists()).thenReturn(false)
-  whenever(mockFile.name).thenReturn("test.csv")
+  val nonExistentDir = File("nonExistentDir")
+  val tempFile = File(nonExistentDir, "test.csv")
 
-  val result = personalStorageCsv.escribirAUnArchivo(mockFile, listOf(jugador))
+  val result = personalStorageCsv.escribirAUnArchivo(tempFile, listOf(jugador))
 
   assertTrue(result.isErr)
   assertTrue(result.error is PersonasException.PersonasStorageException)
@@ -163,27 +152,33 @@ class PersonalStorageCsvTest {
  @Test
  @DisplayName("escribirAUnArchivo debería retornar Err con PersonasStorageException si el archivo no tiene extensión .csv")
  fun escribirAUnArchivo_retornaErrConPersonasStorageException_extensionArchivoInvalida() {
-  whenever(mockFile.parentFile).thenReturn(File("."))
-  whenever(mockFile.parentFile?.exists()).thenReturn(true)
-  whenever(mockFile.name).thenReturn("test.txt")
-
-  val result = personalStorageCsv.escribirAUnArchivo(mockFile, listOf(jugador))
+  val tempFile = createTempFile("testEscribirArchivo", ".txt")
+  val result = personalStorageCsv.escribirAUnArchivo(tempFile, listOf(jugador))
 
   assertTrue(result.isErr)
   assertTrue(result.error is PersonasException.PersonasStorageException)
   assertEquals("No se puede escribir en el archivo debido a que no existe o no es de la extensión adecuada 😔", result.error.message)
+  tempFile.delete()
  }
 
  @Test
  @DisplayName("escribirAUnArchivo debería retornar Err con PersonasStorageException si la persona es de un tipo desconocido")
  fun escribirAUnArchivo_retornaErrConPersonasStorageException_tipoPersonaDesconocido() {
-  val personaDesconocida = object : Persona() {}
-  val tempFile = File("test.csv")
+  val personaDesconocida = object : Persona {}
+  val tempFile = createTempFile("testEscribirArchivo", ".csv")
 
   val result = personalStorageCsv.escribirAUnArchivo(tempFile, listOf(personaDesconocida))
 
   assertTrue(result.isErr)
   assertTrue(result.error is PersonasException.PersonasStorageException)
   assertEquals("Tipo de persona desconocido: Persona\$1", result.error.message)
+  tempFile.delete()
+ }
+
+ private fun createTempDir(prefix: String): File {
+  val tempDir = File.createTempFile(prefix, "", File("."))
+  tempDir.delete()
+  tempDir.mkdirs()
+  return tempDir
  }
 }
