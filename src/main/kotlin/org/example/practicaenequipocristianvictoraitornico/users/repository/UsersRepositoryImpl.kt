@@ -1,12 +1,12 @@
 package org.example.practicaenequipocristianvictoraitornico.users.repository
 
 import org.example.practicaenequipocristianvictoraitornico.users.dao.UsersDao
-import org.example.practicaenequipocristianvictoraitornico.users.mapper.UsersMappper
+import org.example.practicaenequipocristianvictoraitornico.users.mapper.UsersMapper
 import org.example.practicaenequipocristianvictoraitornico.users.models.User
 
 class UsersRepositoryImpl(
     private val usersDao: UsersDao,
-    private val mapper: UsersMappper
+    private val mapper: UsersMapper
 ): UsersRepository {
 
     override fun getAll():List<User> {
