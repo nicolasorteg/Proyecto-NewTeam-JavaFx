@@ -1,4 +1,4 @@
-package practicaenequipocristianvictoraitornico.players.dao
+package org.example.practicaenequipocristianvictoraitornico.players.dao
 
 import org.junit.jupiter.api.Test
 

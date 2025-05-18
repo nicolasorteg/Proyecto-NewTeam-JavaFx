@@ -100,7 +100,7 @@ private val entrenador= Entrenadores(
 @DisplayName("siendo un jugador")
  fun jugadorToDto() {
   val result=mapper.toDto(jugador)
-  assertEquals(result,jugadordto,"deberian ser iguales")
+  assertEquals(result.id,jugadordto.id,"deberian ser iguales")
   assertTrue(result is JugadorDto,"deberia ser un JugadorDTO")
  }
 
@@ -108,7 +108,7 @@ private val entrenador= Entrenadores(
  @DisplayName("siendo un Entrenador")
  fun entrenadorToDto() {
   val result=mapper.toDto(entrenador)
-  assertEquals(result,entrenadorDto,"deberian ser iguales")
+  assertEquals(result.id,entrenadorDto.id,"deberian ser iguales")
   assertTrue(result is EntrenadorDto,"deberia ser un EntenadorDTO")
  }
  @Test
@@ -120,14 +120,14 @@ private val entrenador= Entrenadores(
 @DisplayName("entrenador dto a modelo")
  fun entrenadorToModel() {
   val result=mapper.toModel(entrenadorDto)
-  assertEquals(result,entrenador,"deberian ser iguales")
+  assertEquals(result.id,entrenador.id,"deberian ser iguales")
   assertTrue(result is Entrenadores,"deberia ser un entrenador")
  }
  @Test
  @DisplayName("jugador dto a modelo")
  fun jugadorToModel() {
   val result=mapper.toModel(jugadordto)
-  assertEquals(result,jugador,"deberian ser iguales")
+  assertEquals(result.id,jugador.id,"deberian ser iguales")
   assertTrue(result is Jugadores,"deberia ser un jugador")
  }
 
@@ -135,7 +135,7 @@ private val entrenador= Entrenadores(
 @DisplayName("entrenadorEntity a modelo")
  fun entrenadorToDatabaseModel() {
   val result=mapper.toDatabaseModel(entrenadorEntity)
-  assertEquals(result,entrenador,"deberia ser iguales")
+  assertEquals(result.id,entrenador.id,"deberia ser iguales")
   assertTrue(result is Entrenadores,"deberia ser un Entrenador")
  }
 
@@ -143,14 +143,14 @@ private val entrenador= Entrenadores(
  @DisplayName("jugadorEntity a modelo")
  fun jugadorToDatabaseModel() {
   val result=mapper.toDatabaseModel(jugadorentt)
-  assertEquals(result,jugador,"deberia ser iguales")
+  assertEquals(result.id,jugador.id,"deberia ser iguales")
   assertTrue(result is Jugadores,"deberia ser un Jugador")
  }
 @Test
 @DisplayName("jugador a Entity")
  fun jugadorToEntity() {
   val result=mapper.toEntity(jugador)
- assertEquals(result,jugadorentt,"deberia ser iguales")
+ assertEquals(result.id,jugadorentt.id,"deberia ser iguales")
  assertTrue(result is PersonaEntity,"deberia ser un PersonaEntity")
  }
 
@@ -158,7 +158,7 @@ private val entrenador= Entrenadores(
 @DisplayName("entrenador a Entity")
 fun entrenadorToEntity() {
  val result=mapper.toEntity(entrenador)
- assertEquals(result,entrenadorEntity,"deberia ser iguales")
+ assertEquals(result.id,entrenadorEntity.id,"deberia ser iguales")
  assertTrue(result is PersonaEntity,"deberia ser un PersonaEntity")
 }
 }

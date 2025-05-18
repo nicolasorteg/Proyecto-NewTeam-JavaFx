@@ -1,4 +1,4 @@
-package practicaenequipocristianvictoraitornico.players.validator
+package org.example.practicaenequipocristianvictoraitornico.players.validator
 
 import org.junit.jupiter.api.Test
 

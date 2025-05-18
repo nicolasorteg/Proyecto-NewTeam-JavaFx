@@ -153,7 +153,6 @@ class PersonaMapper {
             peso = persona.peso,
             goles = persona.goles,
             partidosJugados = persona.partidosJugados,
-            especialidad = TODO(),
             imagen = persona.imagen
         )
     }
@@ -178,13 +177,7 @@ class PersonaMapper {
             salario = persona.salario,
             pais = persona.pais,
             tipo = "Entrenador",
-            posicion = TODO(),
-            dorsal = TODO(),
-            altura = TODO(),
-            peso = TODO(),
-            goles = TODO(),
-            partidosJugados = TODO(),
-            imagen = TODO(),
+
         )
     }
 }
