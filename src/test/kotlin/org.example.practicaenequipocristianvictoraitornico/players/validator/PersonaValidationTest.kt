@@ -1,3 +1,5 @@
+package org.example.practicaenequipocristianvictoraitornico.players.validator
+
 import org.example.practicaenequipocristianvictoraitornico.players.models.Jugadores
 import org.example.practicaenequipocristianvictoraitornico.players.models.Posicion
 import org.example.practicaenequipocristianvictoraitornico.players.validator.PersonaValidation
@@ -375,7 +377,7 @@ class PersonaValidationTest {
    imagen = "https://www.hdwallpapers.in/download/cristiano_ronaldo_cr7_with_cup_in_blur_stadium_background_is_wearing_white_sports_dress_hd_cristiano_ronaldo-HD.jpg",
    posicion = Posicion.CENTROCAMPISTA,
    dorsal = 8,
-   altura = 5.0,
+   altura = 1.6,
    peso = 15.0,
    goles = 35,
    partidosJugados = 30,
@@ -404,7 +406,7 @@ class PersonaValidationTest {
    imagen = "https://www.hdwallpapers.in/download/cristiano_ronaldo_cr7_with_cup_in_blur_stadium_background_is_wearing_white_sports_dress_hd_cristiano_ronaldo-HD.jpg",
    posicion = Posicion.CENTROCAMPISTA,
    dorsal = 8,
-   altura = 5.0,
+   altura = 1.6,
    peso = 333.0,
    goles = 35,
    partidosJugados = 30,
@@ -433,7 +435,7 @@ class PersonaValidationTest {
    imagen = "https://www.hdwallpapers.in/download/cristiano_ronaldo_cr7_with_cup_in_blur_stadium_background_is_wearing_white_sports_dress_hd_cristiano_ronaldo-HD.jpg",
    posicion = Posicion.CENTROCAMPISTA,
    dorsal = 8,
-   altura = 5.0,
+   altura = 1.6,
    peso = 60.0,
    goles = -5,
    partidosJugados = 30,
@@ -462,7 +464,7 @@ class PersonaValidationTest {
    imagen = "https://www.hdwallpapers.in/download/cristiano_ronaldo_cr7_with_cup_in_blur_stadium_background_is_wearing_white_sports_dress_hd_cristiano_ronaldo-HD.jpg",
    posicion = Posicion.CENTROCAMPISTA,
    dorsal = 8,
-   altura = 5.0,
+   altura = 1.6,
    peso = 60.0,
    goles = 33,
    partidosJugados = -4,

@@ -5,9 +5,10 @@ import com.github.michaelbull.result.*
 import org.example.practicaenequipocristianvictoraitornico.users.exception.UsersException
 import org.example.practicaenequipocristianvictoraitornico.users.models.User
 import org.example.practicaenequipocristianvictoraitornico.users.repository.UsersRepositoryImpl
+import org.lighthousegames.logging.logging
 import org.mindrot.jbcrypt.BCrypt
 
-
+private val logger = logging()
 class UsersServiceImpl(
     private val repositorio: UsersRepositoryImpl,
 ): UsersService {

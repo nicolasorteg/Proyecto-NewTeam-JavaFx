@@ -35,7 +35,7 @@ object RoutesManager {
     enum class View(val fxml: String) {
         MAIN("/org/example/practicaenequipocristianvictoraitornico/view/players/principal-view.fxml"),
         ACERCA_DE("/org/example/practicaenequipocristianvictoraitornico/view/acerca-de/acercaDe-view.fxml"),
-        SPLASH_SCREEN("/org/example/practicaenequipocristianvictoraitornico/view/splashScreen/splash-screen-view.fxml"),
+        SPLASH_SCREEN("/org/example/practicaenequipocristianvictoraitornico/view/splash-screen/splash-screen-view.fxml"),
         TARJETAS_JUGADORES("/org/example/practicaenequipocristianvictoraitornico/view/players/tarjetasJugadores-view.fxml"),
         USER("/org/example/practicaenequipocristianvictoraitornico/view/user/user-view.fxml"),
     }

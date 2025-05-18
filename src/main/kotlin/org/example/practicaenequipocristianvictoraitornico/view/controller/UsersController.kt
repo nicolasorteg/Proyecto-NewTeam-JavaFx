@@ -28,14 +28,10 @@ class UsersController(
     @FXML
     private lateinit var loginMessage: Label
 
-    // Simulación de base de datos con BCrypt
-    private val usersDB = mapOf(
-        "admin" to BCrypt.hashpw("contraseñasegura", BCrypt.gensalt(12))
-    )
-
     @FXML
     fun initialize() {
         loginButton.setOnAction {
+            logger.debug { "Iniciar loggin" }
             login()
         }
     }

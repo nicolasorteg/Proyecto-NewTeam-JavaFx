@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="536.0" stylesheets="@../../../../../styles/newTeam.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.practicaenequipocristianvictoraitornico.PrincipalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="536.0" stylesheets="@../../../../../styles/newTeam.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <HBox alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="600.0" style="-fx-background-color: #007f5f;" BorderPane.alignment="CENTER">
             <children>
@@ -97,7 +97,7 @@
                                     <children>
                                         <ImageView fitHeight="61.0" fitWidth="100.0" preserveRatio="true" />
                                         <Label styleClass="player-name" text="Oliver Atom" />
-                                        <Button fx:id="btnJugadores" styleClass="about-button" text="Datos Jugador">
+                                        <Button styleClass="about-button" text="Datos Jugador">
                                             <VBox.margin>
                                                 <Insets />
                                             </VBox.margin></Button>
