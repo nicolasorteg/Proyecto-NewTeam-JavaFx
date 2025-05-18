@@ -33,11 +33,11 @@ object RoutesManager {
     lateinit var app: Application
 
     enum class View(val fxml: String) {
-        MAIN("views/principal-view.fxml"),
-        ACERCA_DE("views/acercaDe-view.fxml"),
-        SPLASH_SCREEN("views/splashScreen.fxml"),
-        TARJETAS_JUGADORES("views/tarjetasJugadores-view.fxml"),
-        USER("views/user-view.fxml"),
+        MAIN("/org/example/practicaenequipocristianvictoraitornico/view/players/principal-view.fxml"),
+        ACERCA_DE("/org/example/practicaenequipocristianvictoraitornico/view/acerca-de/acercaDe-view.fxml"),
+        SPLASH_SCREEN("/org/example/practicaenequipocristianvictoraitornico/view/splashScreen/splash-screen-view.fxml"),
+        TARJETAS_JUGADORES("/org/example/practicaenequipocristianvictoraitornico/view/players/tarjetasJugadores-view.fxml"),
+        USER("/org/example/practicaenequipocristianvictoraitornico/view/user/user-view.fxml"),
     }
 
     init {
@@ -64,7 +64,6 @@ object RoutesManager {
         stage.apply {
             title = "Cargando aplicación..."
             scene.root = root
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             isResizable = false
             this.scene = scene
             centerOnScreen()
@@ -74,8 +73,7 @@ object RoutesManager {
         // Esperamos 3 segundos, luego mostramos el login
         val pause = PauseTransition(Duration.seconds(3.0))
         pause.setOnFinished {
-            controller.setStatus("¡Listo!")
-            showLogin(barraCarga.scene.window as Scene)
+            showLogin(scene)
         }
         pause.play()
     }
@@ -85,26 +83,31 @@ object RoutesManager {
      */
     fun showLogin(scene: Scene) {
         logger.debug { "Mostrando pantalla de login" }
+        try {
+            val loader = FXMLLoader(getResource(View.USER.fxml))
+            val root = loader.load<Pane>()
+            val controller = loader.getController<UsersController>()
+            val scene = Scene(root)
 
-        val loader = FXMLLoader(getResource(View.USER.fxml))
-        val root = loader.load<Pane>()
-        val controller = loader.getController<UsersController>()
-        val scene = Scene(root)
+            val loginStage = Stage().apply {
+                title = "Iniciar sesión"
+                this.scene = scene
+                isResizable = false
+                icons.add(Image(getResourceAsStream("images/LogoSinFondo.png")))
+                initOwner(mainStage)
+                initModality(Modality.APPLICATION_MODAL)
+                centerOnScreen()
+            }
 
-        val loginStage = Stage().apply {
-            title = "Iniciar sesión"
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
-            this.scene = scene
-            isResizable = false
-            initOwner(mainStage)
-            initModality(Modality.APPLICATION_MODAL)
-            centerOnScreen()
+            _activeStage.close()
+            _activeStage = loginStage
+            loginStage.show()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            logger.error { "Error al mostrar login: ${e.message}" }
         }
-
-        _activeStage.close()
-        _activeStage = loginStage
-        loginStage.show()
     }
+
 
     /**
      * Muestra la vista principal de la aplicación.
@@ -122,7 +125,6 @@ object RoutesManager {
             title = "Gestor del New Team"
             this.scene = scene
             isResizable = false
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             setOnCloseRequest { onAppExit(it.toString()) }
             centerOnScreen()
             show()
@@ -146,7 +148,6 @@ object RoutesManager {
         Stage().apply {
             title = "Acerca del programa"
             this.scene = scene
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             isResizable = false
             initOwner(mainStage)
             initModality(Modality.WINDOW_MODAL)
@@ -168,7 +169,6 @@ object RoutesManager {
         Stage().apply {
             title = "Datos de Jugadores"
             this.scene = scene
-            icons.add(Image(getResourceAsStream("icons/logo.png")))
             isResizable = false
             initOwner(mainStage)
             initModality(Modality.WINDOW_MODAL)

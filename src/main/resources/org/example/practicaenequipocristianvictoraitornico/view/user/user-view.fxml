@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="245.0" prefWidth="458.0" style="-fx-background-color: linear-gradient(green,  yellow);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practicaenequipocristianvictoraitornico.users.controller.usersController">
+<AnchorPane prefHeight="245.0" prefWidth="458.0" style="-fx-background-color: linear-gradient(green,  yellow);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController">
    <children>
       <Label layoutX="27.0" layoutY="34.0" text="Inicio de sesion: " textFill="WHITE">
          <font>
