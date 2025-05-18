@@ -19,7 +19,7 @@
     <top>
         <HBox alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="600.0" style="-fx-background-color: #007f5f;" BorderPane.alignment="CENTER">
             <children>
-                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="Salir">
+                <Button fx:id="salirButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="Salir">
                     <HBox.margin>
                         <Insets left="2.0" top="7.0" />
                     </HBox.margin>
@@ -30,7 +30,7 @@
                             </image></ImageView>
                     </graphic>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="161.0" text="Acerca De">
+                <Button fx:id="acercaDeButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="161.0" text="Acerca De">
                     <HBox.margin>
                         <Insets left="2.0" top="7.0" />
                     </HBox.margin>
@@ -82,7 +82,7 @@
                                         <Font name="System Bold" size="12.0" />
                                     </font>
                                 </Label>
-                                <ComboBox prefHeight="13.0" prefWidth="99.0">
+                                <ComboBox fx:id="comboBoxPosicion" prefHeight="13.0" prefWidth="99.0">
                                     <HBox.margin>
                                         <Insets left="10.0" right="5.0" top="10.0" />
                                     </HBox.margin>
@@ -97,7 +97,7 @@
                                     <children>
                                         <ImageView fitHeight="61.0" fitWidth="100.0" preserveRatio="true" />
                                         <Label styleClass="player-name" text="Oliver Atom" />
-                                        <Button styleClass="about-button" text="Datos Jugador">
+                                        <Button fx:id="btnJugadores" styleClass="about-button" text="Datos Jugador">
                                             <VBox.margin>
                                                 <Insets />
                                             </VBox.margin></Button>

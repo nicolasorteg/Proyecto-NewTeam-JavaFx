@@ -12,6 +12,7 @@ import org.example.practicaenequipocristianvictoraitornico.players.models.Posici
 
 import org.example.practicaenequipocristianvictoraitornico.view.routes.RoutesManager
 import org.example.practicaenequipocristianvictoraitornico.view.routes.logger
+import java.util.*
 
 class PrincipalController {
     @FXML
@@ -63,7 +64,7 @@ class PrincipalController {
         /**
          * Se inserta la enum class Posicion de los jugadores en el ComboBox y se selecciona una opcion.
          */
-        comboBoxPosicion.items.addAll(Posicion.values().map { it.name.lowercase() })
+        comboBoxPosicion.items.addAll(Posicion.values().map { it.name.capitalize() })
         comboBoxPosicion.setOnAction {
             val posicion = comboBoxPosicion.value
             logger.debug { "Posicion seleccionada: $posicion" }

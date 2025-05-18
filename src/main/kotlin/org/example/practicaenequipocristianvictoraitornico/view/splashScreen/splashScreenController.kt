@@ -4,6 +4,7 @@ import javafx.fxml.FXML
 import javafx.scene.Scene
 import javafx.scene.control.Label
 import javafx.scene.control.ProgressBar
+import javafx.stage.Stage
 import org.example.practicaenequipocristianvictoraitornico.view.routes.RoutesManager
 
 class SplashScreenController {
@@ -23,7 +24,8 @@ class SplashScreenController {
 
         // Iniciar carga simulada
         viewModel.iniciarCarga {
-            RoutesManager.showLogin(barraCarga.scene.window as Scene)
+            val stage = barraCarga.scene.window as Stage
+            RoutesManager.showLogin(stage)
         }
     }
 }

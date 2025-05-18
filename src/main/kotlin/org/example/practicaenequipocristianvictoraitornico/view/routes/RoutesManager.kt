@@ -71,43 +71,34 @@ object RoutesManager {
         }
 
         // Esperamos 3 segundos, luego mostramos el login
-        val pause = PauseTransition(Duration.seconds(3.0))
-        pause.setOnFinished {
-            showLogin(scene)
-        }
+        val pause = PauseTransition(Duration.seconds(5.0))
         pause.play()
     }
 
     /**
      * Muestra la ventana de inicio de sesión.
      */
-    fun showLogin(scene: Scene) {
+    fun showLogin(owner: Stage) {
         logger.debug { "Mostrando pantalla de login" }
-        try {
-            val loader = FXMLLoader(getResource(View.USER.fxml))
-            val root = loader.load<Pane>()
-            val controller = loader.getController<UsersController>()
-            val scene = Scene(root)
 
-            val loginStage = Stage().apply {
-                title = "Iniciar sesión"
-                this.scene = scene
-                isResizable = false
-                icons.add(Image(getResourceAsStream("images/LogoSinFondo.png")))
-                initOwner(mainStage)
-                initModality(Modality.APPLICATION_MODAL)
-                centerOnScreen()
-            }
+        val loader = FXMLLoader(getResource(View.USER.fxml))
+        val root = loader.load<Pane>()
+        val controller = loader.getController<UsersController>()
+        val scene = Scene(root)
 
-            _activeStage.close()
-            _activeStage = loginStage
-            loginStage.show()
-        } catch (e: Exception) {
-            e.printStackTrace()
-            logger.error { "Error al mostrar login: ${e.message}" }
+        val loginStage = Stage().apply {
+            title = "Iniciar sesión"
+            this.scene = scene
+            isResizable = false
+            initOwner(owner)
+            initModality(Modality.APPLICATION_MODAL)
+            centerOnScreen()
         }
-    }
 
+        _activeStage.close()
+        _activeStage = loginStage
+        loginStage.show()
+    }
 
     /**
      * Muestra la vista principal de la aplicación.
@@ -116,7 +107,6 @@ object RoutesManager {
         logger.debug { "Mostrando vista principal" }
 
         val loader = FXMLLoader(getResource(View.MAIN.fxml))
-        loader.setController(PrincipalController())
         val root = loader.load<Pane>()
         val controller = loader.getController<PrincipalController>()
         val scene = Scene(root)
