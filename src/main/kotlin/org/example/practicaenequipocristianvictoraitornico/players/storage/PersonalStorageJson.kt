@@ -212,7 +212,7 @@ class PersonalStorageJson : PersonalStorage {
         // escritura del JSON en el archivo
 
         file.writeText(json)
-        return Ok("archivo guardado correctamente")
+        return Ok(file.absolutePath)
     }
 
 
