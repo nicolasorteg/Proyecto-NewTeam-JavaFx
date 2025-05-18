@@ -75,7 +75,7 @@ object RoutesManager {
         val pause = PauseTransition(Duration.seconds(3.0))
         pause.setOnFinished {
             controller.setStatus("¡Listo!")
-            showLogin()
+            showLogin(barraCarga.scene.window as Scene)
         }
         pause.play()
     }
@@ -83,7 +83,7 @@ object RoutesManager {
     /**
      * Muestra la ventana de inicio de sesión.
      */
-    fun showLogin() {
+    fun showLogin(scene: Scene) {
         logger.debug { "Mostrando pantalla de login" }
 
         val loader = FXMLLoader(getResource(View.USER.fxml))

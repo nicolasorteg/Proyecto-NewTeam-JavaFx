@@ -3,33 +3,63 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="367.0" prefWidth="479.0" style="-fx-background-color: linear-gradient(to bottom, #ffffff, #e6e6e6);                    -fx-border-color: gold; -fx-border-width: 6px;                    -fx-border-radius: 15; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
-
-    <!-- Título -->
-    <Label layoutX="80" layoutY="15" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #14c400;" text="Super Campeones" />
-
-    <!-- Imagen del jugador -->
-    <ImageView fx:id="imagenJugador" fitHeight="240" fitWidth="200" layoutX="75" layoutY="45" style="-fx-effect: dropshadow(gaussian, #00000088, 15, 0.5, 0, 0); -fx-background-radius: 10;" />
-
-    <!-- Información del jugador -->
-    <VBox layoutX="35" layoutY="295" prefWidth="280" spacing="6" style="-fx-background-color: #f0f0f0; -fx-background-radius: 10; -fx-padding: 10;">
-        <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Nombre: Oliver Atom" />
-        <Label style="-fx-font-size: 13px;" text="Posición: Delantero" />
-        <Label style="-fx-font-size: 13px;" text="Equipo: New Team" />
-        <Label style="-fx-font-size: 13px;" text="Número: 10" />
-        <Label style="-fx-font-size: 13px;" text="Goles: 56" />
-        <Label style="-fx-font-size: 13px;" text="Partidos Jugados: 78" />
-    </VBox>
-
-    <!-- Biografía -->
-    <TextArea editable="false" layoutX="20" layoutY="400" prefHeight="60" prefWidth="310" style="-fx-control-inner-background: #f9f9f9; -fx-font-size: 12px; -fx-border-radius: 10;" wrapText="true">
-        <text>
-            Biografía: Capitán del New Team, líder nato y apasionado del fútbol. Su visión de juego y determinación lo convierten en un referente.
-        </text>
-    </TextArea>
-
-    <!-- Botón volver -->
-    <Button fx:id="btnVolver" layoutX="135" layoutY="475" style="-fx-background-color: #FFD700; -fx-font-weight: bold; -fx-text-fill: black; -fx-background-radius: 10; -fx-cursor: hand;" text="Volver" />
+<AnchorPane prefHeight="433.0" prefWidth="524.0" style="-fx-background-color: linear-gradient(green,  yellow);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practicaenequipocristianvictoraitornico.acercaDe.AcrecaDeController">
+    <children>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="39.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/LogoSinFondo.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="231.0" layoutY="79.0" text="New Team" textFill="WHITE">
+            <font>
+                <Font name="Impact" size="47.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="50.0" fitWidth="51.0" layoutX="181.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/imagenGitHubSinFondo.png" />
+            </image>
+        </ImageView>
+        <Hyperlink fx:id="gitHubRepository" layoutX="238.0" layoutY="359.0" text="Repositorio de Github" />
+        <Separator layoutX="218.0" layoutY="131.0" prefHeight="6.0" prefWidth="221.0" />
+        <Label layoutX="51.0" layoutY="298.0" text="\@Cristianortegaa   " textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Label>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="57.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/fotoCristianGithub.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="168.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/fotoAitorGithub.jpeg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="279.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/fotoNcoGithub.gif" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="390.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/fotoVictorGithub.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="287.0" layoutY="299.0" text="\@nicolasorteg" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Label>
+        <Label layoutX="186.0" layoutY="298.0" text="\@Aitoraros" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Label>
+        <Label layoutX="396.0" layoutY="299.0" text="\@Aragorn7273" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Label>
+    </children>
 
 </AnchorPane>
