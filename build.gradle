@@ -6,9 +6,12 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
     //doc con dokka
+    id 'org.jetbrains.dokka' version '1.9.20'
+    //jacoco
     id 'jacoco'
     //serialization
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.23'
+
 }
 
 group 'org.example'
@@ -125,14 +128,14 @@ jacocoTestReport{
     }
     afterEvaluate {
         classDirectories.setFrom (files(classDirectories.files.collect{
-                fileTree(dir: it, exclude: [
+            fileTree(dir: it, exclude: [
                     "**/models/**",
                     "**/exceptions/**",
                     "**/*Main*.*"
-                ])
-            }))
-        }
+            ])
+        }))
     }
+}
 
 jacocoTestCoverageVerification{
     violationRules {
@@ -145,6 +148,6 @@ jacocoTestCoverageVerification{
 }
 task testCoverage(group: 'verification', description: 'Runs the unit tests with coverage'){
     dependsOn test,
-        jacocoTestReport,
-        jacocoTestCoverageVerification
+            jacocoTestReport,
+            jacocoTestCoverageVerification
 }
