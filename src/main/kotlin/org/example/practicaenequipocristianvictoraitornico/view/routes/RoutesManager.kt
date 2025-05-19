@@ -13,7 +13,7 @@ import javafx.scene.control.ButtonType
 import javafx.scene.layout.Pane
 import javafx.stage.WindowEvent
 
-import org.example.practicaenequipocristianvictoraitornico.view.acercaDe.AcrecaDeController
+import org.example.practicaenequipocristianvictoraitornico.view.acercaDe.AcercaDeController
 
 import org.lighthousegames.logging.logging
 
@@ -130,7 +130,7 @@ object RoutesManager {
 
         val loader = FXMLLoader(getResource(View.ACERCA_DE.fxml))
         val root = loader.load<Pane>()
-        val controller = loader.getController<AcrecaDeController>()
+        val controller = loader.getController<AcercaDeController>()
         val scene = Scene(root)
 
         Stage().apply {
