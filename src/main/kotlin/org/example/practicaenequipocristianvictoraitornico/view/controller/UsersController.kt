@@ -3,16 +3,15 @@ package org.example.practicaenequipocristianvictoraitornico.view.controller
 import javafx.fxml.FXML
 import javafx.scene.control.*
 import javafx.stage.Stage
+import org.koin.core.component.inject
 
-import org.example.practicaenequipocristianvictoraitornico.users.service.UsersServiceImpl
 import org.lighthousegames.logging.logging
-import org.mindrot.jbcrypt.BCrypt
+
 import org.example.practicaenequipocristianvictoraitornico.view.routes.RoutesManager
+import org.koin.core.component.KoinComponent
 
-class UsersController(
-    private val users: UsersServiceImpl
-) {
-
+class UsersController: KoinComponent {
+    private val usersController: LoginViewModel by inject()
     private val logger = logging()
 
 
@@ -30,8 +29,8 @@ class UsersController(
 
     @FXML
     fun initialize() {
+        logger.debug { "Iniciar loggin" }
         loginButton.setOnAction {
-            logger.debug { "Iniciar loggin" }
             login()
         }
     }
@@ -45,10 +44,8 @@ class UsersController(
             loginMessage.style = "-fx-text-fill: red;"
             return
         }
-        val crypt= BCrypt.hashpw(inputPass,BCrypt.gensalt(12))
 
-
-        if (inputPass != null && users.goodLogin(inputUser,crypt).isOk) {
+        if (usersController.login(inputUser,inputPass).isOk) {
             loginMessage.text = "Inicio de sesión exitoso"
             loginMessage.style = "-fx-text-fill: green;"
             logger.info { "Usuario $inputUser ha iniciado sesión correctamente" }
