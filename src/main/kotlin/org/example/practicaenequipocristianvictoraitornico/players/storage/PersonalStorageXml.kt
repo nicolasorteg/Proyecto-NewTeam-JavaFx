@@ -153,6 +153,6 @@ class PersonalStorageXml: PersonalStorage {
         // escritura del archivo XML
         val xml = XML { indent = 4 }
         file.writeText(xml.encodeToString(equipoDto))
-        return Ok("archivo guardado correctamente")
+        return Ok(file.absolutePath)
     }
 }
