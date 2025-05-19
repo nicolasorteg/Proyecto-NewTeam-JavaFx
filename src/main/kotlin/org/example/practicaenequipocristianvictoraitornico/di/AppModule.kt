@@ -22,6 +22,8 @@ import org.jdbi.v3.core.Jdbi
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import org.koin.core.module.dsl.bind
+import org.example.practicaenequipocristianvictoraitornico.view.players.PersonasViewModel
+import org.example.practicaenequipocristianvictoraitornico.view.controller.LoginViewModel
 
 
 /**
@@ -66,4 +68,6 @@ val appModule = module {
         bind<UsersDao>()
     }
 
+    singleOf(::PersonasViewModel)
+    singleOf(::LoginViewModel)
 }
