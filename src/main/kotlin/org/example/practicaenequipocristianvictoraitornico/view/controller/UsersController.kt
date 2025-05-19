@@ -3,17 +3,16 @@ package org.example.practicaenequipocristianvictoraitornico.view.controller
 import javafx.fxml.FXML
 import javafx.scene.control.*
 import javafx.stage.Stage
-import org.koin.core.component.inject
-
 import org.lighthousegames.logging.logging
-
 import org.example.practicaenequipocristianvictoraitornico.view.routes.RoutesManager
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-class UsersController: KoinComponent {
-    private val usersController: LoginViewModel by inject()
+class UsersController : KoinComponent {
     private val logger = logging()
 
+    // Inyección del ViewModel
+    val usersController: LoginViewModel by inject()
 
     @FXML
     private lateinit var userName: TextField
@@ -29,7 +28,6 @@ class UsersController: KoinComponent {
 
     @FXML
     fun initialize() {
-        logger.debug { "Iniciar loggin" }
         loginButton.setOnAction {
             login()
         }

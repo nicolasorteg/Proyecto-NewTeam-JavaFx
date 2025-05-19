@@ -1,0 +1,333 @@
+2025-05-19 02:35:51.912326+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:36:04.980024+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:36:14.971439+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:36:15.686056+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:38:03.039152+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:38:44.329106+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:38:46.737263+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:38:56.849800+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:39:15.306684+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 02:40:04.457046+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 09:29:37.967135+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 09:34:59.132699+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select * from users where nombre_usuario = ? [42104-232]
+2025-05-19 09:42:31.563516+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 09:46:59.302445+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 09:52:06.626078+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 09:57:18.323159+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 09:59:09.578642+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 10:00:09.987219+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 10:05:59.975604+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 10:07:38.011006+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 10:08:25.267965+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 10:29:25.623734+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE nombre_usuario = ? [42104-232]
+2025-05-19 11:05:17.000993+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcBatchUpdateException: Tabla "EMPLEADOS" no encontrada
+Table "EMPLEADOS" not found; SQL statement:
+DELETE FROM empleados [42102-232]
+	at com.h2database@2.3.232/org.h2.jdbc.JdbcStatement.executeBatch(JdbcStatement.java:828)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.statement.SqlLoggerUtil.wrap(SqlLoggerUtil.java:32)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.statement.Batch.execute(Batch.java:86)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.statement.Script.execute(Script.java:53)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.common.database.DatabaseManager.ejecutarScriptSql$lambda$2(DatabaseManager.kt:32)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.HandleConsumer.lambda$asCallback$0(HandleConsumer.java:32)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.Jdbi.withHandle(Jdbi.java:422)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.Jdbi.useHandle(Jdbi.java:438)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.common.database.DatabaseManager.ejecutarScriptSql(DatabaseManager.kt:31)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.common.database.DatabaseManager.<init>(DatabaseManager.kt:25)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.common.database.DatabaseManagerKt.provideDatabaseManager(DatabaseManager.kt:46)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$1.invoke(SingleOf.kt:223)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$1.invoke(SingleOf.kt:44)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$2.invoke(SingleOf.kt:227)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$2.invoke(SingleOf.kt:52)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$13.invoke(SingleOf.kt:227)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$13.invoke(SingleOf.kt:60)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$4.invoke(SingleOf.kt:227)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$4.invoke(SingleOf.kt:52)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$6.invoke(SingleOf.kt:227)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$6.invoke(SingleOf.kt:52)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController$special$$inlined$inject$default$1.invoke(KoinComponent.kt:67)
+	at kotlin.stdlib/kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:83)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController.getUsersController(UsersController.kt:15)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController.login(UsersController.kt:46)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController.initialize$lambda$0(UsersController.kt:32)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "EMPLEADOS" no encontrada
+Table "EMPLEADOS" not found; SQL statement:
+DELETE FROM empleados [42102-232]
+	at com.h2database@2.3.232/org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at com.h2database@2.3.232/org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at com.h2database@2.3.232/org.h2.message.DbException.get(DbException.java:223)
+	at com.h2database@2.3.232/org.h2.message.DbException.get(DbException.java:199)
+	at com.h2database@2.3.232/org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7945)
+	at com.h2database@2.3.232/org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7916)
+	at com.h2database@2.3.232/org.h2.command.Parser.readTableOrView(Parser.java:7895)
+	at com.h2database@2.3.232/org.h2.command.Parser.readTableOrView(Parser.java:7857)
+	at com.h2database@2.3.232/org.h2.command.Parser.readSimpleTableFilter(Parser.java:1073)
+	at com.h2database@2.3.232/org.h2.command.Parser.parseDelete(Parser.java:1087)
+	at com.h2database@2.3.232/org.h2.command.Parser.parsePrepared(Parser.java:656)
+	at com.h2database@2.3.232/org.h2.command.Parser.parse(Parser.java:581)
+	at com.h2database@2.3.232/org.h2.command.Parser.parse(Parser.java:556)
+	at com.h2database@2.3.232/org.h2.command.Parser.prepareCommand(Parser.java:484)
+	at com.h2database@2.3.232/org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at com.h2database@2.3.232/org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at com.h2database@2.3.232/org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at com.h2database@2.3.232/org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:190)
+	at com.h2database@2.3.232/org.h2.jdbc.JdbcStatement.executeBatch(JdbcStatement.java:813)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.statement.SqlLoggerUtil.wrap(SqlLoggerUtil.java:32)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.statement.Batch.execute(Batch.java:86)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.statement.Script.execute(Script.java:53)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.common.database.DatabaseManager.ejecutarScriptSql$lambda$2(DatabaseManager.kt:32)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.HandleConsumer.lambda$asCallback$0(HandleConsumer.java:32)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.Jdbi.withHandle(Jdbi.java:422)
+	at org.jdbi.v3.core@3.48.0/org.jdbi.v3.core.Jdbi.useHandle(Jdbi.java:438)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.common.database.DatabaseManager.ejecutarScriptSql(DatabaseManager.kt:31)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.common.database.DatabaseManager.<init>(DatabaseManager.kt:25)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.common.database.DatabaseManagerKt.provideDatabaseManager(DatabaseManager.kt:46)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$1.invoke(SingleOf.kt:223)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$1.invoke(SingleOf.kt:44)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$2.invoke(SingleOf.kt:227)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$2.invoke(SingleOf.kt:52)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$13.invoke(SingleOf.kt:227)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$13.invoke(SingleOf.kt:60)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$4.invoke(SingleOf.kt:227)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$4.invoke(SingleOf.kt:52)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$6.invoke(SingleOf.kt:227)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.di.AppModuleKt$appModule$lambda$25$$inlined$singleOf$6.invoke(SingleOf.kt:52)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.InstanceFactory.create(InstanceFactory.kt:50)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.create(SingleInstanceFactory.kt:46)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:55)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory$get$1.invoke(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.mp.KoinPlatformTools.synchronized(KoinPlatformTools.kt:36)
+	at koin.core.jvm@3.5.6/org.koin.core.instance.SingleInstanceFactory.get(SingleInstanceFactory.kt:53)
+	at koin.core.jvm@3.5.6/org.koin.core.registry.InstanceRegistry.resolveInstance$koin_core(InstanceRegistry.kt:109)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveValue(Scope.kt:248)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.resolveInstance(Scope.kt:234)
+	at koin.core.jvm@3.5.6/org.koin.core.scope.Scope.get(Scope.kt:213)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController$special$$inlined$inject$default$1.invoke(KoinComponent.kt:67)
+	at kotlin.stdlib/kotlin.SynchronizedLazyImpl.getValue(LazyJVM.kt:83)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController.getUsersController(UsersController.kt:15)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController.login(UsersController.kt:46)
+	at org.example.practicaenequipocristianvictoraitornico@1.0-SNAPSHOT/org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController.initialize$lambda$0(UsersController.kt:32)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)

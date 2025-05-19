@@ -18,17 +18,18 @@ object Config {
         val propertiesStream=this.javaClass.classLoader.getResourceAsStream("config.properties")
             ?: throw FileNotFoundException("config.properties")
         properties.load(propertiesStream)
-        //crea las constantes basándonos en el archivo properties para crear el objeto configuración
+        //crea las constantes basándonos en el archivo config.properties para crear el objeto configuración
         val stringDateConf:String = properties.getProperty("local.time")?:"en-EN"
         val databaseUrl=System.getProperty("database.url")?:"jdbc:h2:./jugadores"
-        val initTables=properties.getProperty("init.tables").toBoolean()?:false
-        val initdata=properties.getProperty("init.data").toBoolean()?:false
+        val initTables=properties.getProperty("init.tables").toBoolean()?:true
+        val initdata=properties.getProperty("init.data").toBoolean()?:true
         val cache=properties.getProperty("cache.capacity").toIntOrNull()?: 5
         val imgDir= properties.getProperty("data.imagenes")?:"imagenes"
 
 
         return ConfiguracionProperties(databaseUrl,initdata,initTables,cache,stringDateConf,imgDir)
     }
+
 
 
 

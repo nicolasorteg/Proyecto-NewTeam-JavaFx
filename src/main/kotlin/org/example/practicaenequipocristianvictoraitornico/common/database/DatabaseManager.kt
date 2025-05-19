@@ -4,37 +4,45 @@ import org.jdbi.v3.core.Jdbi
 import org.jdbi.v3.core.kotlin.KotlinPlugin
 import org.jdbi.v3.sqlobject.SqlObjectPlugin
 import org.lighthousegames.logging.logging
+import java.io.FileNotFoundException
+import java.util.*
 
 
-class DatabaseManager {
+class DatabaseManager{
     private val logger= logging()
     val jdbi: Jdbi by lazy {
         logger.debug { "inicializando jdbi" }
-        Jdbi.create(Config.configProperties.url)
+
+        Jdbi.create("jdbc:h2:./jugadores")
+
     }
     init {
         jdbi.installPlugin(KotlinPlugin())
         jdbi.installPlugin(SqlObjectPlugin())
-        if (Config.configProperties.initTables){
-            ejecutarScriptSql("config/tables.sql")
-        }
-        if (Config.configProperties.initData){
-            ejecutarScriptSql("config/data.sql")
-        }
+
+        ejecutarScriptSql("tables.sql")
+
+        ejecutarScriptSql("data.sql")
     }
 
     private fun ejecutarScriptSql(file: String) {
-        val scriptString= ClassLoader.getSystemResourceAsStream(file)?.bufferedReader()!!.readText()
-        jdbi.useHandle<Exception> {
-            it.createScript(scriptString).execute()
+        val scriptString= ClassLoader.getSystemResourceAsStream(file)?.bufferedReader()!!
+        val script = scriptString.readText()
+        jdbi.useHandle<Exception> {it->
+            it.createScript(script).execute()
         }
     }
 }
 fun provideDatabaseManager(): Jdbi {
     val logger = logging()
-    logger.debug { "obteniendo database manager" }
+    logger.debug { "Obteniendo config properties..." }
+
+    val config = Config.configProperties
+
+    logger.debug {
+        "Config.url=${config.url}, initData=${config.initData}, initTables=${config.initTables}"
+    }
+
     val databaseManager = DatabaseManager()
     return databaseManager.jdbi
 }
-
-
