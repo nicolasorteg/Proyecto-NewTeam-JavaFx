@@ -19,12 +19,14 @@ import java.util.zip.ZipOutputStream
 import kotlin.io.path.name
 
 class PersonalStorageZip(
-    private val config: Config,
+
     private val csv: PersonalStorageCsv,
     private val json: PersonalStorageJson,
     private val bin: PersonalStorageBin,
     private val xml: PersonalStorageXml,
 ) {
+    private val config=Config
+
     private val tempDirName = "players"
     private val logger = logging()
     fun leerDelArchivo(file: File): Result<List<Persona>, PersonasException> {

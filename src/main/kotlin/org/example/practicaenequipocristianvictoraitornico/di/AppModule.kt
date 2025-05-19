@@ -8,7 +8,12 @@ import org.example.practicaenequipocristianvictoraitornico.players.dao.getPerson
 import org.example.practicaenequipocristianvictoraitornico.players.mappers.PersonaMapper
 import org.example.practicaenequipocristianvictoraitornico.players.models.Persona
 import org.example.practicaenequipocristianvictoraitornico.players.repository.PersonasRepositoryImplementation
+import org.example.practicaenequipocristianvictoraitornico.players.services.PersonaService
 import org.example.practicaenequipocristianvictoraitornico.players.storage.PersonalStorageZip
+import org.example.practicaenequipocristianvictoraitornico.players.storage.PersonalStorageCsv
+import org.example.practicaenequipocristianvictoraitornico.players.storage.PersonalStorageBin
+import org.example.practicaenequipocristianvictoraitornico.players.storage.PersonalStorageXml
+import org.example.practicaenequipocristianvictoraitornico.players.storage.PersonalStorageJson
 import org.example.practicaenequipocristianvictoraitornico.players.validator.PersonaValidation
 import org.example.practicaenequipocristianvictoraitornico.users.service.UsersServiceImpl
 import org.example.practicaenequipocristianvictoraitornico.users.mapper.UsersMapper
@@ -22,6 +27,7 @@ import org.jdbi.v3.core.Jdbi
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import org.koin.core.module.dsl.bind
+import org.example.practicaenequipocristianvictoraitornico.players.services.PersonaServiceImpl
 
 
 /**
@@ -63,6 +69,19 @@ val appModule = module {
     singleOf(::PersonalStorageZip) {
         bind<PersonalStorageZip>()
     }
+    singleOf(::PersonalStorageBin) {
+        bind<PersonalStorageBin>()
+    }
+    singleOf(::PersonalStorageXml) {
+        bind<PersonalStorageXml>()
+    }
+    singleOf(::PersonalStorageJson) {
+        bind<PersonalStorageJson>()
+    }
+    singleOf(::PersonalStorageCsv) {
+        bind<PersonalStorageCsv>()
+    }
+
     singleOf(::PersonasRepositoryImplementation) {
         bind<PersonasRepositoryImplementation>()
     }
@@ -79,7 +98,11 @@ val appModule = module {
         bind<PersonaMapper>()
     }
     singleOf(::UsersRepositoryImpl) {
-        bind<UsersRepository>() // ✅ Esto es lo que te falta
+        bind<UsersRepository>()
+    }
+    singleOf(::PersonasViewModel)
+    singleOf(::PersonaServiceImpl){
+        bind<PersonaServiceImpl>()
     }
 }
 

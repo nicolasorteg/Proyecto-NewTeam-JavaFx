@@ -71,4 +71,7 @@ module org.example.practicaenequipocristianvictoraitornico {
 
     opens org.example.practicaenequipocristianvictoraitornico.view.players to javafx.fxml;
     exports org.example.practicaenequipocristianvictoraitornico.view.players;
+
+    opens org.example.practicaenequipocristianvictoraitornico.players.services to javafx.fxml;
+    exports org.example.practicaenequipocristianvictoraitornico.players.services;
 }
