@@ -4,12 +4,15 @@ import javafx.fxml.FXML
 import javafx.scene.control.*
 import javafx.stage.Stage
 import org.lighthousegames.logging.logging
-import org.mindrot.jbcrypt.BCrypt
 import org.example.practicaenequipocristianvictoraitornico.view.routes.RoutesManager
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-class UsersController {
-
+class UsersController : KoinComponent {
     private val logger = logging()
+
+    // Inyección del ViewModel
+    val usersController: LoginViewModel by inject()
 
     @FXML
     private lateinit var userName: TextField
@@ -22,11 +25,6 @@ class UsersController {
 
     @FXML
     private lateinit var loginMessage: Label
-
-    // Simulación de base de datos con BCrypt
-    private val usersDB = mapOf(
-        "admin" to BCrypt.hashpw("contraseñasegura", BCrypt.gensalt())
-    )
 
     @FXML
     fun initialize() {
@@ -45,9 +43,7 @@ class UsersController {
             return
         }
 
-        val hashedPassword = usersDB[inputUser]
-
-        if (hashedPassword != null && BCrypt.checkpw(inputPass, hashedPassword)) {
+        if (usersController.login(inputUser,inputPass).isOk) {
             loginMessage.text = "Inicio de sesión exitoso"
             loginMessage.style = "-fx-text-fill: green;"
             logger.info { "Usuario $inputUser ha iniciado sesión correctamente" }

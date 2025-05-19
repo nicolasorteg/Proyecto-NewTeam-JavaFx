@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="536.0" stylesheets="@../../../../../styles/newTeam.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="600.0" style="-fx-background-color: #007f5f;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="salirButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="Salir">
+                    <HBox.margin>
+                        <Insets left="2.0" top="7.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../icons/4115235-exit-logout-sign-out_114030 (1).png" />
+                            </image></ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="acercaDeButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="161.0" text="Acerca De">
+                    <HBox.margin>
+                        <Insets left="2.0" top="7.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../icons/acerca-de.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Label fx:id="NewTeamlabel" alignment="CENTER" prefHeight="42.0" prefWidth="358.0" text="NEW TEAM" textFill="#ffdd00" />
+                <Button fx:id="estadisticasButton" alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Estadísticas" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets right="5.0" top="6.0" />
+                    </HBox.margin></Button>
+            </children>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="LadoIzquierdo" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="detallesButtom" prefHeight="26.0" prefWidth="93.0" text="detalles">
+                    <VBox.margin>
+                        <Insets left="5.0" right="4.0" top="15.0" />
+                    </VBox.margin></Button>
+                <Button fx:id="importarButtom" prefHeight="26.0" prefWidth="93.0" text="importar">
+                    <VBox.margin>
+                        <Insets left="5.0" right="4.0" top="15.0" />
+                    </VBox.margin></Button>
+                <Button fx:id="exportarButtom" prefHeight="26.0" prefWidth="93.0" text="exportar">
+                    <VBox.margin>
+                        <Insets left="5.0" right="4.0" top="15.0" />
+                    </VBox.margin></Button>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <content>
+                <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="448.0" prefWidth="435.0" style="-fx-background-color: #f4faff;">
+                    <children>
+
+                        <HBox fx:id="" prefHeight="48.0" prefWidth="435.0">
+                            <children>
+                                <Label fx:id="PosicionLabel" prefHeight="26.0" prefWidth="52.0" text="Posición:">
+                                    <HBox.margin>
+                                        <Insets left="10.0" top="10.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="comboBoxPosicion" prefHeight="13.0" prefWidth="99.0">
+                                    <HBox.margin>
+                                        <Insets left="10.0" right="5.0" top="10.0" />
+                                    </HBox.margin>
+                                </ComboBox>
+                            </children>
+                        </HBox>
+
+                        <TilePane fx:id="tilePaneTarjetas" hgap="10" layoutY="43.0" prefHeight="392.0" prefWidth="436.0" vgap="10">
+                        <TableView fx:id="tablePlayers" prefHeight="381.0" prefWidth="361.0">
+                            <columns>
+                                <TableColumn fx:id="tableColumnNumero" editable="false" prefWidth="53.0" text="Num" />
+                                <TableColumn fx:id="tableColumNombre" editable="false" prefWidth="243.0" text="Nombre" />
+                                <TableColumn fx:id="tableColumnGoles" editable="false" prefWidth="65.0" text="goles." />
+                            </columns>
+                        </TableView>
+                        </TilePane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox prefHeight="34.0" prefWidth="424.0" style="-fx-background-color: #FFE99B;" BorderPane.alignment="CENTER">
+            <children>
+                <Label nodeOrientation="RIGHT_TO_LEFT" prefHeight="34.0" prefWidth="545.0" text="Miembros:">
+                    <graphic>
+                        <TextField fx:id="miembrosText" nodeOrientation="RIGHT_TO_LEFT" prefHeight="21.0" prefWidth="54.0" />
+                    </graphic>
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </Label>
+                <Label nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="349.0" text="Media de Goles">
+                    <graphic>
+                        <TextField fx:id="mediaGolesText" prefHeight="21.0" prefWidth="60.0" />
+                    </graphic>
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

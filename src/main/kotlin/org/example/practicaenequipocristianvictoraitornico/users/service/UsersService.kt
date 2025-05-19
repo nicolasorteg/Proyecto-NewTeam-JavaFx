@@ -5,4 +5,5 @@ import org.example.practicaenequipocristianvictoraitornico.users.exception.Users
 import org.example.practicaenequipocristianvictoraitornico.users.models.User
 
 interface UsersService: Service<User, UsersException, String> {
+    fun getUserByUsername(username: String): User?
 }

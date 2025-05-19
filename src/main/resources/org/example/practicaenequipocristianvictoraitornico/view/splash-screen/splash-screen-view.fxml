@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20" style="-fx-background-color: linear-gradient(yellow, green); -fx-padding: 40;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.practicaenequipocristianvictoraitornico.view.splashScreen.SplashScreenController">
+    <ImageView fx:id="logo" fitHeight="100.0" fitWidth="100.0" preserveRatio="true">
+      <image>
+         <Image url="@../../../../../images/LogoSinFondo.png" />
+      </image></ImageView>
+    <Label style="-fx-text-fill: white; -fx-font-size: 20px;" text="Bienvenido al gestor del New Team" />
+    <ProgressBar fx:id="barraCarga" prefWidth="200" progress="0.0" />
+   <Label fx:id="mensajeCarga" />
+</VBox>

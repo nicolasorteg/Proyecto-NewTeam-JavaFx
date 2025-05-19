@@ -1,17 +1,19 @@
 package org.example.practicaenequipocristianvictoraitornico.users.service
 
-import com.github.michaelbull.result.Err
-import com.github.michaelbull.result.Ok
-import com.github.michaelbull.result.Result
+import com.github.michaelbull.result.*
 
 import org.example.practicaenequipocristianvictoraitornico.users.exception.UsersException
 import org.example.practicaenequipocristianvictoraitornico.users.models.User
+import org.example.practicaenequipocristianvictoraitornico.users.repository.UsersRepository
 import org.example.practicaenequipocristianvictoraitornico.users.repository.UsersRepositoryImpl
+import org.lighthousegames.logging.logging
+import org.mindrot.jbcrypt.BCrypt
 
-
+private val logger = logging()
 class UsersServiceImpl(
-    private val repositorio: UsersRepositoryImpl,
+    private val repositorio: UsersRepository,
 ): UsersService {
+
     override fun getAll(): Result<List<User>,UsersException> {
         try {
             return Ok(repositorio.getAll())
@@ -23,21 +25,57 @@ class UsersServiceImpl(
 
 
     override fun getByID(id: String): Result<User, UsersException> {
-        return repositorio.getById(id)?.let { Ok(it) }?:
-        Err(UsersException.UsersNotFoundException(id))
+
+        try {
+            return repositorio.getById(id)?.let { Ok(it) } ?: Err(UsersException.UsersNotFoundException(id))
+        }catch (e:Exception){
+            return Err(UsersException.DatabaseException(e.message.toString()))
+        }
     }
 
     override fun save(item: User): Result<User, UsersException> {
-        return Ok(repositorio.save(item))
+        try {
+            return Ok(repositorio.save(item))
+        }catch (e:Exception){
+            return Err(UsersException.DatabaseException(e.message.toString()))
+        }
+
     }
 
     override fun delete(id: String): Result<User, UsersException> {
-        return repositorio.delete(id)?.let { Ok(it) }?:
-        Err(UsersException.UsersNotFoundException(id))
+        try {
+            return repositorio.delete(id)?.let { Ok(it) }?:
+            Err(UsersException.UsersNotFoundException(id))
+        }catch (e:Exception){
+            return Err(UsersException.DatabaseException(e.message.toString()))
+        }
+
     }
 
     override fun update(id: String, item:User): Result<User, UsersException> {
-        return repositorio.update(item,id)?.let { Ok(it) }?:
-        Err(UsersException.UsersNotFoundException(id))
+        try {
+            return repositorio.update(item,id)?.let { Ok(it) }?:
+            Err(UsersException.UsersNotFoundException(id))
+        }catch (e:Exception){
+            return Err(UsersException.DatabaseException(e.message.toString()))
+        }
+    }
+    fun goodLogin(username: String, password: String): Result<User, UsersException> {
+        val userResult = getUserByUsername(username)
+        return if (userResult != null) {
+            if (BCrypt.checkpw(password, userResult.password)) {
+                logger.debug { "contraseña valida" }
+                Ok(userResult)
+            } else {
+                logger.debug { "contraseña invalida $password ${userResult.password}" }
+                Err(UsersException.ContraseniaEquivocadaException("Contraseña errónea"))
+            }
+        } else {
+            logger.debug { "contraseña vacia" }
+            Err(UsersException.UsersNotFoundException(username))
+        }
+    }
+    override fun getUserByUsername(username: String): User? {
+        return repositorio.getByName(username)
     }
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="433.0" prefWidth="524.0" style="-fx-background-color: linear-gradient(green,  yellow);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.practicaenequipocristianvictoraitornico.view.acercaDe.AcercaDeController">
+    <children>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="39.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/LogoSinFondo.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="231.0" layoutY="79.0" text="New Team" textFill="WHITE">
+            <font>
+                <Font name="Impact" size="47.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="50.0" fitWidth="51.0" layoutX="181.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/imagenGitHubSinFondo.png" />
+            </image>
+        </ImageView>
+        <Hyperlink fx:id="gitHubRepository" layoutX="238.0" layoutY="359.0" text="Repositorio de Github" />
+        <Separator layoutX="218.0" layoutY="131.0" prefHeight="6.0" prefWidth="221.0" />
+        <Label layoutX="51.0" layoutY="298.0" text="\@Cristianortegaa   " textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Label>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="57.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/fotoCristianGithub.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="168.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/fotoAitorGithub.jpeg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="279.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/fotoNcoGithub.gif" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="390.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../images/fotoVictorGithub.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="287.0" layoutY="299.0" text="\@nicolasorteg" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Label>
+        <Label layoutX="186.0" layoutY="298.0" text="\@Aitoraros" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Label>
+        <Label layoutX="396.0" layoutY="299.0" text="\@Aragorn7273" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font></Label>
+    </children>
+
+</AnchorPane>
