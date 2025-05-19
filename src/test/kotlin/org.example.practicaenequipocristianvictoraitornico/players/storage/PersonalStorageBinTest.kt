@@ -160,7 +160,6 @@ class PersonalStorageBinTest {
   assertTrue(result.isOk)
   assertEquals(tempFile.absolutePath, result.get())
 
-  // Basic check if file is created, more detailed check of content is harder without mocking RAF
   assertTrue(tempFile.exists())
   tempFile.delete()
  }
@@ -200,7 +199,7 @@ class PersonalStorageBinTest {
   assertEquals("El directorio padre del fichero no existe: ${invalidFile.parentFile.absolutePath}", result.error.messager)
  }
 
- // Helper function to create a temporary directory
+
  private fun createTempDir(prefix: String): File {
   val tempDir = File.createTempFile(prefix, "", File("."))
   tempDir.delete()
