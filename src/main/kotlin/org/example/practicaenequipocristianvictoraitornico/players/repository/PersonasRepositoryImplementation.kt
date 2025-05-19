@@ -5,6 +5,7 @@ import org.example.practicaenequipocristianvictoraitornico.players.mappers.Perso
 import org.example.practicaenequipocristianvictoraitornico.players.models.Entrenadores
 import org.example.practicaenequipocristianvictoraitornico.players.models.Jugadores
 import org.example.practicaenequipocristianvictoraitornico.players.models.Persona
+import org.example.practicaenequipocristianvictoraitornico.users.models.User
 import org.lighthousegames.logging.logging
 
 class PersonasRepositoryImplementation(
@@ -65,6 +66,10 @@ class PersonasRepositoryImplementation(
     override fun save(objeto: Persona): Persona {
         val id= dao.save(mapper.toEntity(objeto))
         return personaCopy(objeto,id.toLong())
+    }
+
+    override fun getByName(username: String): User? {
+        TODO("Not yet implemented")
     }
 
     /**

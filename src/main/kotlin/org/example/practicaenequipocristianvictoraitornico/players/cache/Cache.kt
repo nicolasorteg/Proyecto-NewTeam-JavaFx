@@ -9,7 +9,7 @@ import org.lighthousegames.logging.logging
 
 fun darPersonasCache(
 ):Cache<Long, Persona> {
-    val size=Config.configProperties.capacity
+    val size= Config.configProperties.capacity
     val logger= logging()
     logger.debug { "creando cache" }
     return Caffeine.newBuilder().maximumSize(size.toLong()).build()

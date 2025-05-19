@@ -65,6 +65,7 @@ object RoutesManager {
             title = "Cargando aplicación..."
             scene.root = root
             isResizable = false
+            icons.add(Image(getResourceAsStream("/icons/IconoLogo.png")))
             this.scene = scene
             centerOnScreen()
             show()
@@ -90,6 +91,7 @@ object RoutesManager {
             title = "Iniciar sesión"
             this.scene = scene
             isResizable = false
+            icons.add(Image(getResourceAsStream("/icons/IconoLogo.png")))
             initOwner(owner)
             initModality(Modality.APPLICATION_MODAL)
             centerOnScreen()
@@ -115,6 +117,7 @@ object RoutesManager {
             title = "Gestor del New Team"
             this.scene = scene
             isResizable = false
+            icons.add(Image(getResourceAsStream("/icons/IconoLogo.png")))
             setOnCloseRequest { onAppExit(it.toString()) }
             centerOnScreen()
             show()
@@ -139,6 +142,7 @@ object RoutesManager {
             title = "Acerca del programa"
             this.scene = scene
             isResizable = false
+            icons.add(Image(getResourceAsStream("/icons/IconoLogo.png")))
             initOwner(mainStage)
             initModality(Modality.WINDOW_MODAL)
             centerOnScreen()
@@ -160,6 +164,7 @@ object RoutesManager {
             title = "Datos de Jugadores"
             this.scene = scene
             isResizable = false
+            icons.add(Image(getResourceAsStream("/icons/IconoLogo.png")))
             initOwner(mainStage)
             initModality(Modality.WINDOW_MODAL)
             centerOnScreen()
@@ -197,12 +202,8 @@ object RoutesManager {
         return app::class.java.getResource(resource)
             ?: throw RuntimeException("Recurso no encontrado: $resource")
     }
-
-    /**
-     * Utilidad para obtener recursos como InputStream.
-     */
     fun getResourceAsStream(resource: String): InputStream {
         return app::class.java.getResourceAsStream(resource)
-            ?: throw RuntimeException("Recurso no encontrado como stream: $resource")
+            ?: throw RuntimeException("No se ha encontrado el recurso como stream: $resource")
     }
 }

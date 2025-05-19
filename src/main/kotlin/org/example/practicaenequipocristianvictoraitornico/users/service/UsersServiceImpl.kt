@@ -4,14 +4,16 @@ import com.github.michaelbull.result.*
 
 import org.example.practicaenequipocristianvictoraitornico.users.exception.UsersException
 import org.example.practicaenequipocristianvictoraitornico.users.models.User
+import org.example.practicaenequipocristianvictoraitornico.users.repository.UsersRepository
 import org.example.practicaenequipocristianvictoraitornico.users.repository.UsersRepositoryImpl
 import org.lighthousegames.logging.logging
 import org.mindrot.jbcrypt.BCrypt
 
 private val logger = logging()
 class UsersServiceImpl(
-    private val repositorio: UsersRepositoryImpl,
+    private val repositorio: UsersRepository,
 ): UsersService {
+
     override fun getAll(): Result<List<User>,UsersException> {
         try {
             return Ok(repositorio.getAll())
@@ -59,12 +61,21 @@ class UsersServiceImpl(
         }
     }
     fun goodLogin(username: String, password: String): Result<User, UsersException> {
-        return getByID(username).onSuccess {
-            val user = it
-            return if(BCrypt.checkpw(it.password,password)) Ok(user) else Err(UsersException.ContraseniaEquivocadaException("Contraseña errónea"))
-        }.onFailure {
-            return Err(it)
+        val userResult = getUserByUsername(username)
+        return if (userResult != null) {
+            if (BCrypt.checkpw(password, userResult.password)) {
+                logger.debug { "contraseña valida" }
+                Ok(userResult)
+            } else {
+                logger.debug { "contraseña invalida $password ${userResult.password}" }
+                Err(UsersException.ContraseniaEquivocadaException("Contraseña errónea"))
+            }
+        } else {
+            logger.debug { "contraseña vacia" }
+            Err(UsersException.UsersNotFoundException(username))
         }
-
+    }
+    override fun getUserByUsername(username: String): User? {
+        return repositorio.getByName(username)
     }
 }
