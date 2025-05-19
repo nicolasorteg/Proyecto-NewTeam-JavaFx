@@ -9,6 +9,7 @@ import javafx.animation.PauseTransition
 import javafx.application.Platform
 import javafx.scene.control.Alert
 import javafx.scene.control.ButtonType
+import javafx.scene.image.Image
 
 import javafx.scene.layout.Pane
 import javafx.stage.WindowEvent

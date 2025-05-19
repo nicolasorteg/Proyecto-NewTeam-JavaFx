@@ -4,7 +4,7 @@ import com.github.michaelbull.result.Result
 import org.example.practicaenequipocristianvictoraitornico.users.exception.UsersException
 import org.example.practicaenequipocristianvictoraitornico.users.models.User
 import org.example.practicaenequipocristianvictoraitornico.users.service.UsersServiceImpl
-import org.mindrot.jbcrypt.BCrypt
+import org.example.practicaenequipocristianvictoraitornico.view.players.PersonasViewModel
 
 data class LoginResult(val success: Boolean, val message: String)
 
@@ -18,7 +18,7 @@ class LoginViewModel(
 
         //val crypt= BCrypt.hashpw(password,BCrypt.gensalt(12))
 
-        val login= users.goodLogin(username,password)
+        val login= users.goodLogin(username, password)
         if (login.isOk){
             loginResult=login.value
         }

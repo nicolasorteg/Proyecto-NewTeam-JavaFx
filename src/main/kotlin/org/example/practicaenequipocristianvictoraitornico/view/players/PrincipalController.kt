@@ -23,6 +23,7 @@ import org.koin.core.component.inject
 
 class PrincipalController: KoinComponent {
     private val viewModel: PersonasViewModel by inject()
+
     @FXML
     private lateinit var btnJugadores: Button
 
