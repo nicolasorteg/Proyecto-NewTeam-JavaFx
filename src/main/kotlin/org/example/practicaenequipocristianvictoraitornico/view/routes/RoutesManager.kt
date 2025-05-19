@@ -9,19 +9,19 @@ import javafx.animation.PauseTransition
 import javafx.application.Platform
 import javafx.scene.control.Alert
 import javafx.scene.control.ButtonType
-import javafx.scene.image.Image
+
 import javafx.scene.layout.Pane
 import javafx.stage.WindowEvent
-import org.example.practicaenequipocristianvictoraitornico.PrincipalController
+
 import org.example.practicaenequipocristianvictoraitornico.view.acercaDe.AcrecaDeController
-import org.example.practicaenequipocristianvictoraitornico.view.controller.UsersController
+
 import org.lighthousegames.logging.logging
-import org.example.practicaenequipocristianvictoraitornico.view.splashScreen.SplashScreenController
-import org.example.practicaenequipocristianvictoraitornico.view.tarjetasJugadores.TarjetasJugadoresController
+
 import java.io.InputStream
 
 
 import java.net.URL
+import java.util.*
 
 val logger = logging()
 
@@ -42,6 +42,7 @@ object RoutesManager {
 
     init {
         logger.debug { "Inicializando RoutesManager" }
+        Locale.setDefault(Locale.forLanguageTag("es-ES"))
     }
 
     /**
@@ -57,7 +58,6 @@ object RoutesManager {
         // Cargamos el FXML del Splash
         val loader = FXMLLoader(getResource(View.SPLASH_SCREEN.fxml))
         val root = loader.load<Pane>()
-        val controller = loader.getController<SplashScreenController>()
         val scene = Scene(root)
 
         // Configuramos la ventana
@@ -83,7 +83,6 @@ object RoutesManager {
 
         val loader = FXMLLoader(getResource(View.USER.fxml))
         val root = loader.load<Pane>()
-        val controller = loader.getController<UsersController>()
         val scene = Scene(root)
 
         val loginStage = Stage().apply {
@@ -108,7 +107,6 @@ object RoutesManager {
 
         val loader = FXMLLoader(getResource(View.MAIN.fxml))
         val root = loader.load<Pane>()
-        val controller = loader.getController<PrincipalController>()
         val scene = Scene(root)
 
         mainStage.apply {
@@ -153,7 +151,6 @@ object RoutesManager {
 
         val loader = FXMLLoader(getResource(View.TARJETAS_JUGADORES.fxml))
         val root = loader.load<Pane>()
-        val controller = loader.getController<TarjetasJugadoresController>()
         val scene = Scene(root)
 
         Stage().apply {
