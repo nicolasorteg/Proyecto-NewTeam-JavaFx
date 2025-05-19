@@ -8,11 +8,8 @@ import org.example.practicaenequipocristianvictoraitornico.players.dao.getPerson
 import org.example.practicaenequipocristianvictoraitornico.players.mappers.PersonaMapper
 import org.example.practicaenequipocristianvictoraitornico.players.models.Persona
 import org.example.practicaenequipocristianvictoraitornico.players.repository.PersonasRepositoryImplementation
-import org.example.practicaenequipocristianvictoraitornico.players.services.PersonaService
 import org.example.practicaenequipocristianvictoraitornico.players.storage.PersonalStorageZip
 import org.example.practicaenequipocristianvictoraitornico.players.validator.PersonaValidation
-import org.example.practicaenequipocristianvictoraitornico.players.services.PersonaServiceImpl
-import org.example.practicaenequipocristianvictoraitornico.users.service.UsersService
 import org.example.practicaenequipocristianvictoraitornico.users.service.UsersServiceImpl
 import org.example.practicaenequipocristianvictoraitornico.users.mapper.UsersMapper
 import org.example.practicaenequipocristianvictoraitornico.users.repository.UsersRepositoryImpl
@@ -20,6 +17,7 @@ import org.example.practicaenequipocristianvictoraitornico.users.dao.provideUser
 import org.example.practicaenequipocristianvictoraitornico.users.dao.UsersDao
 import org.example.practicaenequipocristianvictoraitornico.users.repository.UsersRepository
 import org.example.practicaenequipocristianvictoraitornico.view.controller.LoginViewModel
+import org.example.practicaenequipocristianvictoraitornico.view.players.PersonasViewModel
 import org.jdbi.v3.core.Jdbi
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module

@@ -112,7 +112,7 @@ jlinkZip {
 }
 jar {
     manifest {
-        attributes 'Main-Class': 'practicaenequipocristianvictoraitornico.main'
+        attributes 'Main-Class': 'org.example.practicaenequipocristianvictoraitornico.MainApp'
     }
     from {
         configurations["compileClasspath"].collect { it.isDirectory() ? it : zipTree(it) }
