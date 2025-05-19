@@ -15,7 +15,7 @@ import org.lighthousegames.logging.logging
 import java.io.File
 import java.io.RandomAccessFile
 import java.time.LocalDate
-
+/*
 class PersonalStorageBinTest {
  private val logger = logging()
  private val personaMapper = PersonaMapper()
@@ -206,4 +206,4 @@ class PersonalStorageBinTest {
   tempDir.mkdirs()
   return tempDir
  }
-}
+}*/

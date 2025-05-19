@@ -22,34 +22,39 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 class PrincipalController: KoinComponent {
+    @FXML
+    lateinit var PosicionLabel: Label
+
+    @FXML
+    lateinit var tilePaneTarjetas: TilePane
+
+    @FXML
+    lateinit var anchorpane: AnchorPane
+
+    @FXML
+    lateinit var estadisticasButton: Button
+    @FXML
+    lateinit var NewTeamlabel: Label
+
+    @FXML
+    lateinit var LadoIzquierdo: VBox
+
+    @FXML
+    lateinit var detallesButtom: Button
+
+    @FXML
+    lateinit var importarButtom: Button
+
+    @FXML
+    lateinit var exportarButtom: Button
+
     private val viewModel: PersonasViewModel by inject()
 
     @FXML
     private lateinit var btnJugadores: Button
 
-    @FXML
-    private lateinit var exportaButton: Button
 
-    @FXML
-    private lateinit var importarButton: Button
 
-    @FXML
-    private lateinit var anchorpane: AnchorPane
-
-    @FXML
-    private lateinit var tilePaneTarjetas: TilePane
-
-    @FXML
-    private lateinit var hboxposicion: VBox
-
-    @FXML
-    private lateinit var PosicionLabel: Label
-
-    @FXML
-    private lateinit var NewTeamlabel: Label
-
-    @FXML
-    private lateinit var LadoIzquierdo: VBox
     @FXML
     private lateinit var tablePlayers: TableView<Persona>
 
@@ -97,11 +102,11 @@ class PrincipalController: KoinComponent {
         /**
          * exporta a un fichero zip
          */
-        exportaButton.setOnAction { onExportarAction() }
+        exportarButtom.setOnAction { onExportarAction() }
         /**
          * importa de un fichero
          */
-        importarButton.setOnAction { onImportarAction() }
+        importarButtom.setOnAction { onImportarAction() }
         /**
          * El boton salir, llama a RoutesManager que tiene la funcion onAppExit, que sirve para cerrar con alerta.
          */
@@ -115,7 +120,7 @@ class PrincipalController: KoinComponent {
         /**
          *El boton btnJugadores, llama a RoutesManager que tiene la funcion showTarjetasJugadores que sirve para abrir la ventana de las tarjetas de los jugadores.
          */
-        btnJugadores.setOnAction { RoutesManager.showTarjetasJugadores() }
+
     }
 
     private fun onImportarAction(){

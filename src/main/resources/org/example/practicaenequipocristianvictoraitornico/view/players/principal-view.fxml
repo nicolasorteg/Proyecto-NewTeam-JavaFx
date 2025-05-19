@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="536.0" stylesheets="@../../../../../styles/newTeam.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="536.0" stylesheets="@../../../../../styles/newTeam.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.practicaenequipocristianvictoraitornico.view.players.PrincipalController">
     <top>
         <HBox alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="600.0" style="-fx-background-color: #007f5f;" BorderPane.alignment="CENTER">
             <children>
